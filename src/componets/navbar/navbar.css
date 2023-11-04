@@ -1,0 +1,5 @@
+nav .active {
+    color: white;
+    border-color: white;
+    font-weight: 600;
+}
