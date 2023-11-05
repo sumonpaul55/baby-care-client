@@ -15,7 +15,7 @@ const Navbar = () => {
         e.stopPropagation();
         setToggle(!toggle)
     }
-    console.log(user)
+    // console.log(user)
     document.body.addEventListener("click", () => {
         setToggle(false)
         setDashtoggle(false)
@@ -46,7 +46,7 @@ const Navbar = () => {
                         <Link to="/"><img src={logo} className='w-28 md:w-40 lg:w-48' alt="logo" /></Link>
                     </div>
                     <div>
-                        <ul className={`flex gap-5 duration-300 absolute w-full top-12 z-[9999] flex-col lg:flex-row bg-slate-500 lg:bg-transparent justify-center items-center py-5 lg:py-0 lg:static ${!menuToggle ? "right-full" : "right-0"}`}>
+                        <ul className={`flex gap-1 duration-300 absolute w-full top-12 z-[9999] flex-col lg:flex-row bg-slate-500 lg:bg-transparent justify-center items-center py-5 lg:py-0 lg:static ${!menuToggle ? "right-full" : "right-0"}`}>
                             <li><NavLink className="text-slate-300 py-2 px-4 rounded-md" to="/">Home</NavLink></li>
                             <li><NavLink className="text-slate-300 py-2 px-4 rounded-md" to="/all-service">All Service</NavLink></li>
                             <li><NavLink className="text-slate-300 font-semibold py-2 px-4 rounded-md" to="/my-schedule">My Schedule</NavLink></li>

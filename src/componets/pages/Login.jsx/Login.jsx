@@ -20,9 +20,18 @@ const Login = () => {
         const password = form.password.value;
         logIn(email, password)
             .then(res => {
+                toast(`Welcome back ${res.user?.displayName}`, {
+                    autoClose: 2000,
+                    position: "top-center"
+                })
                 res.user && navigate("/")
             })
-            .catch()
+            .catch(err => {
+                toast(`${err}`, {
+                    autoClose: 2000,
+                    position: "top-center"
+                })
+            })
     }
     const handlegoolgeLogin = () => {
         loginWithGoogle()
