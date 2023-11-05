@@ -1,10 +1,16 @@
 import React from 'react';
+import HelmetProvider from '../../../HelmetProvider';
 
 const Bookings = () => {
     return (
-        <div className='container mx-auto'>
-            <h1 className='text-4xl'>Bookings</h1>
-        </div>
+        <>
+            <HelmetProvider pagename="Bookings"></HelmetProvider>
+            <main
+            ><div className='container mx-auto'>
+                    <h1 className='text-4xl'>Bookings</h1>
+                </div>
+            </main>
+        </>
     );
 };
 
