@@ -4,6 +4,7 @@ import logo from "../../assets/logo.png"
 import "./navbar.css"
 import { AuthContextInfo } from '../../authProvider/AuthProvider';
 import { toast } from 'react-toastify';
+import { RxAvatar } from 'react-icons/rx'
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContextInfo)
     const [toggle, setToggle] = useState(false)
@@ -24,7 +25,7 @@ const Navbar = () => {
             })
     }
     return (
-        <nav className='px-1 md:px-1 border-bottom py-5 bg-slate-700 items-center'>
+        <nav className='px-1 md:px-1 border-bottom py-1 bg-slate-700 items-center shadow'>
             <div className="container mx-auto">
                 <div className='flex justify-between items-center'>
                     <div>
@@ -46,8 +47,11 @@ const Navbar = () => {
                                         <img src={user?.photoURL} className='w-10 rounded-full h-10' alt="" />
                                         <h3 className=''>{user?.displayName}</h3>
                                     </div> :
-                                    <Link to="/login">Login</Link>
-                            }
+
+                                    <div className='flex items-center gap-1'>
+                                        <span><RxAvatar /></span>
+                                        <Link to="/login">Login</Link>
+                                    </div>}
                         </div>
                         <div className={`absolute -bottom-20 p-4 bg-slate-500 ${toggle ? "block" : "hidden"}`}>
                             <button className='text-white z-10 relative' onClick={handleLogout}>Log out</button>

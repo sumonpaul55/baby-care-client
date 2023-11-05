@@ -1,12 +1,17 @@
 import React from 'react';
+import Slider from './Slider';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     return (
-        <main>
-            <div className='container mx-auto'>
-                Home
-            </div>
-        </main>
+        <>
+            <Helmet>
+                <title>Littlestarscare || home</title>
+            </Helmet>
+            <main className='bg-slate-200'>
+                <Slider></Slider>
+            </main>
+        </>
     );
 };
 
