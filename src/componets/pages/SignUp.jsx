@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContextInfo } from '../../authProvider/AuthProvider';
 
 const SignUp = () => {
-    const { signUp } = useContext(AuthContextInfo)
+    const { signUp, loginWithGoogle } = useContext(AuthContextInfo)
     const navigate = useNavigate()
     const handleSignup = (e) => {
         e.preventDefault();
@@ -31,6 +31,16 @@ const SignUp = () => {
                 toast(`${err.message}`, { position: "top-center", })
             })
         form.reset();
+    }
+    // login with google
+    const handlegoolgeLogin = () => {
+        loginWithGoogle()
+            .then(res => {
+                res.user && toast(`Welcome back ${res.user.displayName}`, {
+                    autoClose: 2000,
+                    position: "top-center"
+                })
+            })
     }
     return (
         <main className='py-20 bg-slate-400 lg:h-screen'>
@@ -63,7 +73,7 @@ const SignUp = () => {
                     <div className='mt-10'>
                         <p className='font-bold'>You can login with following media</p>
                         <div>
-                            <span className='bg-slate-500 cursor-pointer flex justify-center text-4xl w-full text-white mt-5  rounded-full hover:bg-slate-600 duration-200'><AiOutlineGoogle /></span>
+                            <span onClick={handlegoolgeLogin} className='bg-slate-500 cursor-pointer flex justify-center text-4xl w-full text-white mt-5  rounded-full hover:bg-slate-600 duration-200'><AiOutlineGoogle /></span>
                         </div>
 
                     </div>

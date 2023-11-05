@@ -1,16 +1,18 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineGooglePlus } from 'react-icons/ai';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContextInfo } from '../../../authProvider/AuthProvider';
+import { toast } from 'react-toastify';
 // import { toast } from 'react-toastify';
 
 const Login = () => {
-    const { logIn } = useContext(AuthContextInfo)
+    const { logIn, loginWithGoogle } = useContext(AuthContextInfo)
     const location = useLocation();
     const [showPass, setShowpass] = useState(false)
     const navigate = useNavigate();
 
-    console.log({ navigate })
+    // console.log({ navigate })
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -21,6 +23,16 @@ const Login = () => {
                 res.user && navigate("/")
             })
             .catch()
+    }
+    const handlegoolgeLogin = () => {
+        loginWithGoogle()
+            .then(res => {
+                res.user && toast(`Welcome ${res.user.displayName}`, {
+                    autoClose: 2000,
+                    position: "top-center"
+                })
+                navigate("/")
+            })
     }
     return (
         <main className='py-20 bg-slate-400 lg:h-screen'>
@@ -45,7 +57,7 @@ const Login = () => {
                     <div className='mt-10'>
                         <p className='font-bold'>You can login with following media</p>
                         <div>
-                            <span className='bg-slate-500 cursor-pointer flex justify-center text-4xl w-full text-white mt-5  rounded-full hover:bg-slate-600 duration-200'><AiOutlineGooglePlus /></span>
+                            <span className='bg-slate-500 cursor-pointer flex justify-center text-4xl w-full text-white mt-5  rounded-full hover:bg-slate-600 duration-200' onClick={handlegoolgeLogin}><AiOutlineGooglePlus /></span>
                         </div>
 
                     </div>

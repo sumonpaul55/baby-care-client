@@ -15,6 +15,7 @@ const Navbar = () => {
         e.stopPropagation();
         setToggle(!toggle)
     }
+    console.log(user)
     document.body.addEventListener("click", () => {
         setToggle(false)
         setDashtoggle(false)
@@ -42,7 +43,7 @@ const Navbar = () => {
             <div className="container mx-auto">
                 <div className='flex justify-between items-center'>
                     <div>
-                        <img src={logo} className='w-28 md:w-40 lg:w-48' alt="logo" />
+                        <Link to="/"><img src={logo} className='w-28 md:w-40 lg:w-48' alt="logo" /></Link>
                     </div>
                     <div>
                         <ul className={`flex gap-5 duration-300 absolute w-full top-12 z-[9999] flex-col lg:flex-row bg-slate-500 lg:bg-transparent justify-center items-center py-5 lg:py-0 lg:static ${!menuToggle ? "right-full" : "right-0"}`}>
@@ -58,7 +59,7 @@ const Navbar = () => {
                             {
                                 user?.email ?
                                     <div className='flex items-center gap-1 cursor-pointer' onClick={handleToggle}>
-                                        <img src={user?.photoURL} className='w-10 rounded-full h-10' alt="" />
+                                        <img src={user.photoURL} className='w-10 rounded-full h-10' alt="" />
                                         <h3 className=''>{user?.displayName}</h3>
                                     </div> :
                                     <div className='flex items-center gap-1'>
@@ -76,9 +77,9 @@ const Navbar = () => {
                         <div className='lg:hidden'>
                             <span className='text-white border-slate-600 block shadow border text-xl p-1 rounded-sm px-2' onClick={handleMenu}><AiOutlineBars /></span>
                         </div>
-                        <div className={`p-4 bg-slate-500 absolute top-full border z-[9999] -translate-x-[30%] md:-translate-x-[50%] duration-200 shadow-2xl shadow-slate-600 rounded-md ${!dashtoggle ? "right-full" : "right-0"}`}>
+                        <div onClick={(e) => e.stopPropagation()} className={`p-4 bg-slate-500 absolute top-full border z-[9999] -translate-x-[30%] md:-translate-x-[50%] duration-200 shadow-2xl shadow-slate-600 rounded-md ${!dashtoggle ? "right-full" : "right-0"}`}>
                             <ul>
-                                <li className='text-white'><Link>Add Service</Link></li>
+                                <li className='text-white hover:text-slate-300 duration-200'><Link to="/add-service">Add Service</Link></li>
                             </ul>
                             {/* <div className="absolute w-10 h-10 bg-slate-500 rotate-45 top-0 -z-10 left-1/2 -translate-x-1/2"></div> */}
                         </div>
