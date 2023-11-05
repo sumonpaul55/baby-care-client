@@ -24,7 +24,7 @@ const routers = createBrowserRouter([
             },
             {
                 path: "/my-bookings",
-                element: <Bookings></Bookings>
+                element: <PrivetRoute><Bookings></Bookings></PrivetRoute>
             },
             {
                 path: "/my-schedule",

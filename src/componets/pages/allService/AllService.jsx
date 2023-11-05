@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HelmetProvider from '../../../HelmetProvider';
+import HelmetProvider from '../../../shared/HelmetProvider';
 
 const AllService = () => {
     return (
