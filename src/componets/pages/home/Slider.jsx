@@ -27,28 +27,28 @@ const Slider = () => {
     return (
         <Carousel responsive={responsive} infinite className=''>
             <div className='bg-slate-200 relative flex rounded-lg'>
-                <div className='absolute bg-primary opacity-80 text-white lg:max-w-[500px] top-full lg:top-[90%] -translate-y-full left-[10%] p-2 md:p-10 rounded-lg space-y-5 w-full'>
+                <div className='absolute bg-primary opacity-70 text-white md:max-w-[45vw] top-full lg:top-[95%] -translate-y-full left-[3%] p-2 md:p-10 rounded-lg space-y-5 w-full lg:py-32'>
                     <h2 className="md:text-3xl font-bold">Where Little Stars Shine Bright</h2>
                     <p className='text-sm md:text-lg hidden sm:block'>Where Little Stars Shine Bright - Nurturing young minds to radiate their potential in a loving, safe, and inspiring environment. Your childs path to brilliance starts here.</p>
                     <button className='font-semibold text-sm md:text-xl bg-white text-primary sm:px-4 sm:py-2 rounded-full p-1'>Join the fall fun</button>
                 </div>
-                <img src={slider1} className='md:h-[550px] ml-auto rounded-r-lg' alt="" />
+                <img src={slider1} className='md:w-[60vw] ml-auto rounded-r-lg' alt="" />
             </div>
             <div className='bg-slate-200 relative flex'>
-                <div className='absolute bg-primary opacity-80 text-white lg:max-w-[500px] top-full lg:top-[90%] -translate-y-full left-[10%] p-2 md:p-10 rounded-lg space-y-5 w-full'>
-                    <h2 className="md:text-3xl font-bold">Where Little Stars Shine Bright</h2>
+                <div className='absolute bg-primary opacity-70 text-white md:max-w-[45vw] top-full lg:top-[95%] -translate-y-full left-[3%] p-2 md:p-10 rounded-lg space-y-5 w-full lg:py-32'>
+                    <h2 className="md:text-3xl font-bold">Nurturing Little Minds, One Star at a Time</h2>
                     <p className='text-sm md:text-lg hidden sm:block'>Where Little Stars Shine Bright - Nurturing young minds to radiate their potential in a loving, safe, and inspiring environment. Your childs path to brilliance starts here.</p>
                     <button className='font-semibold text-sm md:text-xl bg-white text-primary sm:px-4 sm:py-2 rounded-full'>Join the fall fun</button>
                 </div>
-                <img src={slider2} className='md:h-[550px] ml-auto rounded-r-lg' alt="" />
+                <img src={slider2} className='md:w-[60vw] ml-auto rounded-r-lg' alt="" />
             </div>
             <div className='bg-slate-200 relative flex'>
-                <div className='absolute bg-primary opacity-80 text-white lg:max-w-[500px] top-full lg:top-[90%] -translate-y-full left-[10%] p-2 md:p-10 rounded-lg space-y-5 w-full'>
-                    <h2 className="md:text-3xl font-bold">Where Little Stars Shine Bright</h2>
+                <div className='absolute bg-primary opacity-70 text-white md:max-w-[45vw] top-full lg:top-[95%] -translate-y-full left-[3%] p-2 md:p-10 rounded-lg space-y-5 w-full lg:py-32'>
+                    <h2 className="md:text-3xl font-bold">Discover the Magic of Littlestascare</h2>
                     <p className='text-sm md:text-lg hidden sm:block'>Where Little Stars Shine Bright - Nurturing young minds to radiate their potential in a loving, safe, and inspiring environment. Your childs path to brilliance starts here.</p>
                     <button className='font-semibold text-sm md:text-xl bg-white text-primary sm:px-4 sm:py-2 rounded-full'>Join the fall fun</button>
                 </div>
-                <img src={slider3} className='md:h-[550px] ml-auto rounded-r-lg' alt="" />
+                <img src={slider3} className='md:w-[60vw] ml-auto rounded-r-lg' alt="" />
             </div>
         </Carousel>
     );

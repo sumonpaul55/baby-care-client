@@ -1,12 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineGooglePlus } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContextInfo } from '../../../authProvider/AuthProvider';
 // import { toast } from 'react-toastify';
 
 const Login = () => {
     const { logIn } = useContext(AuthContextInfo)
+    const location = useLocation();
     const [showPass, setShowpass] = useState(false)
+    const navigate = useNavigate();
+
+    console.log({ navigate })
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -14,7 +18,7 @@ const Login = () => {
         const password = form.password.value;
         logIn(email, password)
             .then(res => {
-                console.log(res)
+                res.user && navigate("/")
             })
             .catch()
     }

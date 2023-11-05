@@ -13,7 +13,7 @@ const Home = () => {
             </Helmet>
             <main className='bg-slate-50'>
                 <div className='sm:p-2'><Slider></Slider></div>
-                <section className="py-20">
+                <section className="py-20 bg-white">
                     <div className="container mx-auto">
                         <h2 className='text-xl font-semibold md:text-3xl lg:text-4xl'>Available Services</h2>
                         <div className='py-10'>
