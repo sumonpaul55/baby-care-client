@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import ReactPlayer from 'react-player'
 import img from "../../../assets/thumbnail.jpg"
 import "./home.css"
+import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <>
@@ -11,8 +12,19 @@ const Home = () => {
                 <title>Littlestarscare || home</title>
             </Helmet>
             <main className='bg-slate-50'>
-                <Slider></Slider>
-                <section className='py-32 bg-white our-mission'>
+                <div className='sm:p-2'><Slider></Slider></div>
+                <section className="py-20">
+                    <div className="container mx-auto">
+                        <h2 className='text-xl font-semibold md:text-3xl lg:text-4xl'>Available Services</h2>
+                        <div className='py-10'>
+                            all service goes here
+                        </div>
+                        <div className="text-center mt-5">
+                            <Link className='text-primary font-bold md:text-xl text-center inline-block border border-transparent duration-200 rounded-md mx-auto hover:border-primary px-3 py-2'>View All Service</Link>
+                        </div>
+                    </div>
+                </section>
+                <section className='py-32 our-mission'>
                     <div className="container mx-auto px-1">
                         <div className='flex flex-col lg:flex-row gap-5 md:gap-16'>
                             <div className='lg:w-5/12 clear-left space-y-8'>

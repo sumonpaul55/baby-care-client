@@ -10,6 +10,7 @@ import MySchedule from '../componets/pages/mySchedule/MySchedule';
 import AllService from '../componets/pages/allService/AllService';
 import Login from '../componets/pages/Login.jsx/Login';
 import PrivetRoute from './PrivetRoute';
+import Contact from '../componets/pages/Contact';
 const routers = createBrowserRouter([
     {
         path: "/",
@@ -31,6 +32,9 @@ const routers = createBrowserRouter([
             {
                 path: "/all-service",
                 element: <AllService></AllService>
+            }, {
+                path: "/contact",
+                element: <Contact></Contact>
             }
         ],
     },
