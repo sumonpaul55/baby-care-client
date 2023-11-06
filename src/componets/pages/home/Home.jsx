@@ -15,7 +15,7 @@ const Home = () => {
     const { data: services, isError, error, isLoading } = useQuery({
         queryKey: ["services"],
         queryFn: () => {
-            return useAxiosSecure("/all-service")
+            return useAxiosSecure("/service6")
         }
     })
     // console.log(services, isError, isLoading, error)
@@ -36,14 +36,14 @@ const Home = () => {
                                 isLoading ? <Loading></Loading> : isError ? <p>{error}</p> :
                                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-20'>
                                         {
-                                            services.data.slice(0, 6).map(service => (
+                                            services.data.map(service => (
                                                 <SingleService key={service._id} service={service}></SingleService>))
                                         }
                                     </div>
                             }
                         </div>
                         <div className="text-center mt-5">
-                            <Link to='/all-service' className='text-primary font-bold md:text-xl text-center inline-block border border-transparent duration-200 rounded-md mx-auto hover:border-primary px-3 py-2'>View All Service</Link>
+                            <Link to='/all-service' className='text-primary font-bold md:text-xl text-center inline-block border border-transparent duration-200 rounded-md mx-auto hover:border-primary px-3 py-2'>Show All</Link>
                         </div>
                     </div>
                 </section>

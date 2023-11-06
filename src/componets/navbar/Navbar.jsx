@@ -64,7 +64,7 @@ const Navbar = () => {
                             {
                                 user?.email ?
                                     <div className='flex items-center gap-1 cursor-pointer' onClick={handleToggle}>
-                                        <img src={user.photoURL} className='w-10 rounded-full h-10' alt="" />
+                                        <img src={user.photoURL} referrerPolicy='no-referrer' className='w-10 rounded-full h-10' alt="" />
                                         <h3 className='text-sm hidden sm:block'>{user?.displayName}</h3>
                                     </div> :
                                     <div className='flex items-center gap-1'>

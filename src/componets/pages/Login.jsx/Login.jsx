@@ -12,7 +12,8 @@ const Login = () => {
     const { state } = useLocation();
     const [showPass, setShowpass] = useState(false)
     const navigate = useNavigate();
-    // const location = useLocation()
+    const location = useLocation()
+
     // console.log(state)
     const handleLogin = e => {
         e.preventDefault();
@@ -40,6 +41,7 @@ const Login = () => {
                     autoClose: 2000,
                     position: "top-center"
                 })
+                navigate(state ? state : "/")
             })
     }
     return (

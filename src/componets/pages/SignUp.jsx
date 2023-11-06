@@ -2,12 +2,13 @@ import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { updateProfile } from 'firebase/auth';
 import { AiOutlineGoogle } from "react-icons/ai"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContextInfo } from '../../authProvider/AuthProvider';
 
 const SignUp = () => {
     const { signUp, loginWithGoogle } = useContext(AuthContextInfo)
     const navigate = useNavigate()
+    const { state } = useLocation()
     const handleSignup = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -25,7 +26,7 @@ const SignUp = () => {
                     }).then().catch()
                 }
                 toast(`Welcome ${name}`, { position: "top-center", autoClose: 2000 });
-                navigate("/")
+                navigate(state ? state : "/")
             })
             .catch(err => {
                 toast(`${err.message}`, { position: "top-center", })
@@ -40,6 +41,9 @@ const SignUp = () => {
                     autoClose: 2000,
                     position: "top-center"
                 })
+                navigate(state ? state : "/")
+            }).catch(err => {
+                toast(err)
             })
     }
     return (

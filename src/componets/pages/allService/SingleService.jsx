@@ -3,9 +3,9 @@ import { RxAvatar } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 
 const SingleService = ({ service }) => {
-    const { _id, serviceArea, serviceImg, serviceName, serviceDescription, price, name, about, providerImg } = service;
+    const { serviceArea, serviceImg, serviceName, serviceDescription, price, name, about, providerImg } = service;
     return (
-        <div className='shadow p-3 md:p-5 rounded-md hover:bg-slate-50 duration-200'>
+        <div className='shadow hover:shadow-lg p-3 md:p-5 rounded-md hover:bg-slate-50 duration-200'>
             <div className='flex gap-4 flex-col lg:flex-row'>
                 <div className='lg:w-5/12'>
                     <img src={serviceImg} className='w-full rounded-sm' alt="" />
