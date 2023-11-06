@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 const AddService = () => {
     const useAxiosSecure = useAxios();
     const { user } = useContext(AuthContextInfo)
+    // console.log(providerImg)
     const handleAddService = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -18,7 +19,9 @@ const AddService = () => {
         const email = form.email.value;
         const serviceArea = form.serviceArea.value;
         const about = form.about.value;
-        const myService = { serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about }
+        const providerImg = user?.photoURL;
+
+        const myService = { serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg }
         // console.log(myService)
         useAxiosSecure.post("/add-service", myService)
             .then(res => {

@@ -1,13 +1,14 @@
 import React from 'react';
+import { RxAvatar } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 
 const SingleService = ({ service }) => {
-    const { _id, serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about } = service;
+    const { _id, serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg } = service;
     return (
         <div className='shadow p-3 md:p-5 rounded-md'>
             <div className='flex gap-4 flex-col lg:flex-row'>
                 <div className='lg:w-5/12'>
-                    <img src={serviceImg} className='w-full' alt="" />
+                    <img src={serviceImg} className='w-full rounded-sm' alt="" />
                 </div>
                 <div className='flex-1'>
                     <h3 className='font-semibold md:text-lg'>{serviceName}</h3>
@@ -18,10 +19,18 @@ const SingleService = ({ service }) => {
             </div>
             <div className='mt-10'>
                 <h4 className='font-semibold mb-4 border-b pb-1'>Service Provider Info:</h4>
-                <div className='space-y-1'>
-                    <h2>Name: {name}</h2>
-                    <address>Location: {serviceArea}</address>
-                    <p className='text-sm'>{about}</p>
+                <div className='flex gap-5 justify-between items-center'>
+                    <div className='space-y-1 flex-1'>
+                        <h2 className='font-bold'>Name: {name}</h2>
+                        <address>Location: {serviceArea}</address>
+                        <p className='text-[12px]'>{about}</p>
+                    </div>
+                    <div className=''>
+                        {
+                            providerImg ? <img src={providerImg} className='w-20 h-20 rounded-full' /> :
+                                <span className='text-5xl'><RxAvatar /></span>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
