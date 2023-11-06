@@ -52,11 +52,11 @@ const Navbar = () => {
                     </div>
                     <div>
                         <ul className={`flex gap-1 duration-300 absolute w-full top-12 z-[9999] flex-col lg:flex-row bg-slate-500 lg:bg-transparent justify-center items-center py-5 lg:py-0 lg:static space-y-5 lg:space-y-0 ${!menuToggle ? "right-[200%]" : "right-0"}`}>
-                            <li><NavLink className="text-slate-300 py-2 px-4 rounded-md" to="/">Home</NavLink></li>
-                            <li><NavLink className="text-slate-300 py-2 px-4 rounded-md" to="/all-service">All Service</NavLink></li>
-                            <li><NavLink className="text-slate-300 font-semibold py-2 px-4 rounded-md" to="/my-schedule">My Schedule</NavLink></li>
-                            <li><NavLink className="text-slate-300 py-2 px-4 rounded-md" to="/my-bookings">Bookings</NavLink></li>
-                            <li><NavLink className="text-slate-300 py-2 px-4 rounded-md" to="/contact">Contact</NavLink></li>
+                            <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/">Home</NavLink></li>
+                            <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/all-service">All Service</NavLink></li>
+                            <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base font-semibold py-2 px-4 rounded-md" to="/my-schedule">My Schedule</NavLink></li>
+                            <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/my-bookings">Bookings</NavLink></li>
+                            <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/contact">Contact</NavLink></li>
                         </ul>
                     </div>
                     <div className='user text-white font-semibold relative'>
@@ -65,14 +65,14 @@ const Navbar = () => {
                                 user?.email ?
                                     <div className='flex items-center gap-1 cursor-pointer' onClick={handleToggle}>
                                         <img src={user.photoURL} referrerPolicy='no-referrer' className='w-10 rounded-full h-10' alt="" />
-                                        <h3 className='text-sm hidden sm:block'>{user?.displayName}</h3>
+                                        <h3 className='text-xs hidden sm:block'>{user?.displayName}</h3>
                                     </div> :
                                     <div className='flex items-center gap-1'>
                                         <span><RxAvatar /></span>
                                         <Link to="/login">Login</Link>
                                     </div>}
                         </div>
-                        <div className={`absolute -bottom-16 -right-1/2 sm:right-0 p-4 z-[9999] bg-slate-500 ${toggle ? "block" : "hidden"}`}>
+                        <div className={`absolute -bottom-16 -right-1/2 sm:right-1/3 p-4 z-[9999] bg-slate-500 ${toggle ? "block" : "hidden"}`}>
                             <button className='text-white z-10 relative text-sm whitespace-nowrap' onClick={handleLogout}>Log out</button>
                             <div className="absolute w-10 h-10 bg-slate-500 rotate-45 top-0 left-1/2 -translate-x-1/2"></div>
                         </div>
@@ -88,7 +88,7 @@ const Navbar = () => {
                                 <li className='text-white hover:text-slate-300 duration-200'><Link to="/add-service">Add Service</Link></li>
                                 <li className='text-white hover:text-slate-300 duration-200'><Link to="/my-service">My Service</Link></li>
                             </ul>
-                            <div className="absolute w-10 h-10 bg-slate-500 rotate-45 top-0 -z-10 right-2"></div>
+                            <div className="absolute w-10 h-10 bg-slate-500 rotate-45 top-0 -z-10 right-10"></div>
                         </div>
                     </div>
                 </div>

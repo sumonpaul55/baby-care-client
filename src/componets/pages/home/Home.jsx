@@ -15,7 +15,7 @@ const Home = () => {
     const { data: services, isError, error, isLoading } = useQuery({
         queryKey: ["services"],
         queryFn: () => {
-            return useAxiosSecure("/service6")
+            return useAxiosSecure.get("/service6")
         }
     })
     // console.log(services, isError, isLoading, error)
