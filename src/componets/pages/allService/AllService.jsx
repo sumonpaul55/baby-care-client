@@ -45,19 +45,19 @@ const AllService = () => {
                 <div className='container mx-auto'>
                     <h1 className='text-xl text-center font-bold md:text-3xl capitalize' >all Service</h1>
                     <div className="py-10">
-                        <div className='md:max-w-[900px] gap2 mx-auto grid grid-cols-1'>
-                            <div className='flex justify-between gap-5 px-4 items-center'>
+                        <div className='md:max-w-[900px] mx-auto'>
+                            <div className='flex justify-between items-start sm:flex-row flex-col gap-5 px-4 sm:items-center mb-2'>
                                 <div className='space-y-2'>
                                     <p className='capitalize font-semibold'>Filter by category</p>
                                     <p className='text-xs'>You can filter the service form here</p>
                                 </div>
-                                <div className='border border-slate-200 p-4'>
-                                    <select name="filterValue" id="" onChange={handleChange}>
+                                <div className='border border-slate-200 p-4 w-full sm:w-auto mr-3 rounded-md'>
+                                    <select name="filterValue" id="" onChange={handleChange} className='focus:outline-slate-200'>
                                         {uniqCate.map((items, idx) => <option key={idx} value={items}>{items}</option>)}
                                     </select>
                                 </div>
                             </div>
-                            <div>
+                            <div className='space-y-7'>
                                 {filterdData.length > 0 ? filterdData.slice(0, numberOfService).map((service) => (
                                     <IndividualService key={service._id} allService={service}></IndividualService>
                                 )) :

@@ -12,6 +12,7 @@ import Login from '../componets/pages/Login.jsx/Login';
 import PrivetRoute from './PrivetRoute';
 import Contact from '../componets/pages/Contact';
 import AddService from '../componets/pages/addService/AddService';
+import ServiceDetails from '../componets/pages/serviceDetail/ServiceDetails';
 const routers = createBrowserRouter([
     {
         path: "/",
@@ -39,6 +40,10 @@ const routers = createBrowserRouter([
             }, {
                 path: "add-service",
                 element: <PrivetRoute><AddService></AddService></PrivetRoute>
+            },
+            {
+                path: "/service-detail/:id",
+                element: <ServiceDetails></ServiceDetails>
             }
         ],
     },
