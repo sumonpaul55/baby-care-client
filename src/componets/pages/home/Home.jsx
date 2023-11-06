@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import Slider from './Slider';
 import { Helmet } from 'react-helmet-async';
@@ -5,7 +6,19 @@ import ReactPlayer from 'react-player'
 import img from "../../../assets/thumbnail.jpg"
 import "./home.css"
 import { Link } from 'react-router-dom';
+import useAxios from '../../../hooks/useAxios';
+import { useQuery } from '@tanstack/react-query';
+import Loading from '../../../shared/Loading';
+import SingleService from '../allService/SingleService';
 const Home = () => {
+    const useAxiosSecure = useAxios();
+    const { data: services, isError, error, isLoading } = useQuery({
+        queryKey: ["services"],
+        queryFn: () => {
+            return useAxiosSecure("/all-service")
+        }
+    })
+    // console.log(services, isError, isLoading, error)
 
     return (
         <>
@@ -19,9 +32,15 @@ const Home = () => {
                         <h2 className='text-xl font-semibold md:text-3xl lg:text-4xl'>Available Services</h2>
                         <div className='py-10'>
                             {/* all service goes here */}
-                            <div>
-
-                            </div>
+                            {
+                                isLoading ? <Loading></Loading> : isError ? <p>{error}</p> :
+                                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-20'>
+                                        {
+                                            services.data.slice(0, 6).map(service => (
+                                                <SingleService key={service._id} service={service}></SingleService>))
+                                        }
+                                    </div>
+                            }
                         </div>
                         <div className="text-center mt-5">
                             <Link to='/all-service' className='text-primary font-bold md:text-xl text-center inline-block border border-transparent duration-200 rounded-md mx-auto hover:border-primary px-3 py-2'>View All Service</Link>
