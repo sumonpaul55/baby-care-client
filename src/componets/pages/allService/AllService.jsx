@@ -29,7 +29,7 @@ const AllService = () => {
                 <div className='container mx-auto'>
                     <h1 className='text-xl text-center font-bold md:text-4xl'>all Service</h1>
                     <div className="py-10">
-                        <div className='md:max-w-[900px] gap-7 mx-auto grid grid-cols-1'>
+                        <div className='md:max-w-[900px] gap2 mx-auto grid grid-cols-1'>
                             {
                                 services.data.slice(0, numberOfService).map((service) => (
                                     <IndividualService key={service._id} allService={service}></IndividualService>
