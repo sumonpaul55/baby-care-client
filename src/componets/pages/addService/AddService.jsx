@@ -20,8 +20,9 @@ const AddService = () => {
         const serviceArea = form.serviceArea.value;
         const about = form.about.value;
         const providerImg = user?.photoURL;
+        const category = form.category.value;
 
-        const myService = { serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg }
+        const myService = { serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg, category }
         // console.log(myService)
         useAxiosSecure.post("/add-service", myService)
             .then(res => {
@@ -74,9 +75,21 @@ const AddService = () => {
                                     <label htmlFor="">Your Name</label><br />
                                     <input type="text" className='w-full p-2 rounded-md focus:outline-primary text-black font-normal border' name='name' defaultValue={user?.displayName} disabled required />
                                 </div>
-                                <div className='pb-2'>
-                                    <label htmlFor="">Your Email</label><br />
-                                    <input type="text" className='w-full p-2 rounded-md focus:outline-primary text-black font-normal border' name='email' defaultValue={user?.email} disabled required />
+                                <div className='flex gap-3 items-center'>
+                                    <div className='flex-1'>
+                                        <label htmlFor="">Your Email</label><br />
+                                        <input type="text" className='w-full p-2 rounded-md focus:outline-primary text-black font-normal border' name='email' defaultValue={user?.email} disabled required />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="">Your Email</label><br />
+                                        <select name="category" required id="" className='w-full p-2 rounded-md focus:outline-primary text-black font-normal border'>
+                                            <option value="Emergency Childcare">Emergency Childcare</option>
+                                            <option value="Long Term">Long Term</option>
+                                            <option value="ShortTerm">ShortTerm</option>
+                                            <option value="Mid Term">Mid Term</option>
+                                            <option value="Permanent">Permanent</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div className='pb-2'>
