@@ -16,10 +16,10 @@ const PrivetRoute = ({ children }) => {
     if (user?.email) {
         return children
     }
-    // <Navigate state={location.pathname} to="/login"></Navigate>
-    useEffect(() => {
-        navigate("/login")
-    }, [navigate])
+    return <Navigate state={location.pathname} to="/login"></Navigate>
+    // useEffect(() => {
+    //     navigate("/login")
+    // }, [navigate])
 
 };
 

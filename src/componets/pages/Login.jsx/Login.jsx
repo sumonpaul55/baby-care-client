@@ -6,15 +6,14 @@ import { AuthContextInfo } from '../../../authProvider/AuthProvider';
 import { toast } from 'react-toastify';
 import HelmetProvider from '../../../shared/HelmetProvider';
 import logo from "../../../assets/logo.png"
-// import { toast } from 'react-toastify';
 
 const Login = () => {
     const { logIn, loginWithGoogle } = useContext(AuthContextInfo)
-    const location = useLocation();
+    const { state } = useLocation();
     const [showPass, setShowpass] = useState(false)
     const navigate = useNavigate();
-
-    // console.log({ navigate })
+    // const location = useLocation()
+    // console.log(state)
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -22,15 +21,14 @@ const Login = () => {
         const password = form.password.value;
         logIn(email, password)
             .then(res => {
-                toast(`Welcome back ${res.user?.displayName}`, {
-                    autoClose: 2000,
-                    position: "top-center"
+                toast(`Welcome back ${res.user.displayName}`, {
+                    position: "top-center",
+                    autoClose: 2000
                 })
-                res.user && navigate("/")
+                navigate(state ? state : "/")
             })
             .catch(err => {
-                toast(`${err}`, {
-                    autoClose: 2000,
+                toast(`User or Password may have wrong`, {
                     position: "top-center"
                 })
             })
@@ -42,7 +40,6 @@ const Login = () => {
                     autoClose: 2000,
                     position: "top-center"
                 })
-                navigate("/")
             })
     }
     return (

@@ -6,6 +6,7 @@ import img from "../../../assets/thumbnail.jpg"
 import "./home.css"
 import { Link } from 'react-router-dom';
 const Home = () => {
+
     return (
         <>
             <Helmet>
@@ -17,7 +18,10 @@ const Home = () => {
                     <div className="container mx-auto">
                         <h2 className='text-xl font-semibold md:text-3xl lg:text-4xl'>Available Services</h2>
                         <div className='py-10'>
-                            all service goes here
+                            {/* all service goes here */}
+                            <div>
+
+                            </div>
                         </div>
                         <div className="text-center mt-5">
                             <Link to='/all-service' className='text-primary font-bold md:text-xl text-center inline-block border border-transparent duration-200 rounded-md mx-auto hover:border-primary px-3 py-2'>View All Service</Link>

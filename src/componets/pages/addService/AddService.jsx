@@ -19,17 +19,16 @@ const AddService = () => {
         const serviceArea = form.serviceArea.value;
         const about = form.about.value;
         const myService = { serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about }
-
+        // console.log(myService)
         useAxiosSecure.post("/add-service", myService)
             .then(res => {
-                if (res.insertedId) {
+                if (res.data.insertedId) {
                     toast("Service Add Successfully", {
                         position: "top-center",
                         autoClose: 2000
                     })
                     form.reset();
                 }
-
             })
             .catch(err => {
                 toast(err, {

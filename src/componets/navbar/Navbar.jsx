@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate, } from 'react-router-dom';
 import logo from "../../assets/logo.png"
 import "./navbar.css"
 import { AuthContextInfo } from '../../authProvider/AuthProvider';
@@ -9,6 +9,7 @@ import { AiOutlineBars } from 'react-icons/ai';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContextInfo)
     const [toggle, setToggle] = useState(false);
+    const navigate = useNavigate()
     const [menuToggle, setMenuToggle] = useState(false)
     const [dashtoggle, setDashtoggle] = useState(false)
     const handleToggle = (e) => {
@@ -24,8 +25,12 @@ const Navbar = () => {
     // hadle logout
     const handleLogout = () => {
         logOut()
-            .then(res => {
-                res && toast("You have logout successfully")
+            .then(() => {
+                toast("You have logout successfully", {
+                    position: "top-center",
+                    autoClose: 3000,
+                })
+                navigate("/")
             }).catch(err => {
                 toast(err)
             })

@@ -25,7 +25,7 @@ const responsive = {
 };
 const Slider = () => {
     return (
-        <Carousel responsive={responsive} infinite className=''>
+        <Carousel responsive={responsive} infinite className='' autoPlay>
             <div className='bg-slate-200 relative flex rounded-lg'>
                 <div className='absolute bg-primary opacity-70 text-white md:max-w-[45vw] top-full lg:top-[95%] -translate-y-full left-[3%] p-2 md:p-10 rounded-lg space-y-5 w-full lg:py-32'>
                     <h2 className="md:text-3xl font-bold">Where Little Stars Shine Bright</h2>
