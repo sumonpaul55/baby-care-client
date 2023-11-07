@@ -3,11 +3,14 @@ import { Box, Modal } from '@mui/material';
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContextInfo } from '../../../authProvider/AuthProvider';
+import useAxios from '../../../hooks/useAxios';
+import { useNavigate } from 'react-router-dom';
 // import HelmetProvider from '../../../shared/HelmetProvider';
 
 const DetailSingle = ({ singleDetailService }) => {
     const { _id, serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg, category, location } = singleDetailService;
-
+    const useAxiosSecure = useAxios()
+    const navigate = useNavigate()
     // // setPageName(serviceName)
     // if (serviceName) {
     //     setPageName(serviceName)
@@ -16,12 +19,33 @@ const DetailSingle = ({ singleDetailService }) => {
     const handleBook = e => {
         e.preventDefault();
         setOpen(false);
+        const form = e.target;
+        const serviceTakingData = form.date.value;
+        const intructions = form.specialInstruction.value;
+        const userAddress = form.address.value;
+        const status = "pendding";
+        const userName = user?.displayName;
+        const userEmail = user?.email;
+        const bookedData = {
+            serviceImg, name, userName, status, userAddress, userEmail, intructions, serviceTakingData, price, location,
+        }
+        useAxiosSecure.post("/books", bookedData)
+            .then(res => {
+                if (res.data.insertedId) {
+                    toast(`Your Booking Successful`, {
+                        position: "top-center",
+                        autoClose: 2000
+                    })
+                    navigate(-1)
+                }
+            })
+            .catch(err => {
+                toast(err, {
+                    autoClose: 200,
+                    position: "top-center"
+                })
+            })
 
-
-        toast(`Your Booking Successful`, {
-            position: "top-center",
-            autoClose: 2000
-        })
     }
     const style = {
         position: 'absolute',
@@ -78,8 +102,7 @@ const DetailSingle = ({ singleDetailService }) => {
                     open={open}
                     onClose={handleClose}
                     aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                >
+                    aria-describedby="modal-modal-description">
                     <Box sx={style}>
                         <h3 className='font-semibold text-base'> Booking Information:</h3>
                         <div>
@@ -87,31 +110,46 @@ const DetailSingle = ({ singleDetailService }) => {
                                 <img src={serviceImg} className='' alt="" />
                                 <div>
                                     <span className='font-semibold'>Service Provider Info:</span>
-                                    <p className='font-semibold mt-4 text-xs md:text-base'>Email: {email}</p>
+                                    <p className='font-semibold mt-4 text-xs md:text-base'>Name: {name}</p>
+                                    <address>Address: {location}</address>
                                 </div>
                             </div>
                             <form onSubmit={handleBook} className=''>
-                                <div className='flex gap-3 '>
+                                <div className='flex md:gap-3 md:flex-row flex-col'>
                                     <div className='my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">Service Name</label><br />
-                                        <input type="text" defaultValue={serviceName} disabled className='px-2 py-1 border-slate-400 border outline-none border-none w-full' />
+                                        <input required type="text" defaultValue={serviceName} disabled name='serviceName' className='px-2 py-1 border-slate-400 border outline-none border-none w-full' />
                                     </div>
                                     <div className='my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">User Email</label><br />
-                                        <input type="text" defaultValue={user?.email} disabled className='px-2 py-1 border-slate-400 border w-full' />
+                                        <input required type="text" name="userEmail" defaultValue={user?.email} disabled className='px-2 py-1 border-slate-400 border w-full' />
+                                    </div>
+                                    <div className='my-3 w-full'>
+                                        <label className='font-semibold pb-1' htmlFor="">Service Provier Email</label><br />
+                                        <input required type="text" name="userEmail" defaultValue={email} disabled className='px-2 py-1 border-slate-400 border w-full' />
                                     </div>
                                 </div>
-                                <div className='flex gap-3 '>
+                                <div className='flex md:gap-3 flex-col md:flex-row'>
                                     <div className='my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">Service Taking Date</label><br />
-                                        <input type="date" defaultValue={serviceName} disabled className='px-2 py-1 border-slate-400 border outline-none border-none w-full' />
+                                        <input required type="date" name='date' className='px-2 py-1 border-slate-400 border outline-none border-none w-full' />
                                     </div>
                                     <div className='my-3 w-full'>
-                                        <label className='font-semibold pb-1' htmlFor="">User Email</label><br />
-                                        <input type="text" defaultValue={user?.email} disabled className='px-2 py-1 border-slate-400 border w-full' />
+                                        <label className='font-semibold pb-1' htmlFor="">Special Instructions</label><br />
+                                        <input required type="text" placeholder='Special Instructions' name="specialInstruction" className='px-2 py-1 border-slate-300 border w-full' />
                                     </div>
                                 </div>
-                                <input className='px-1 py-1 w-full bg-slate-600 cursor-pointer text-white hover:bg-pink-600 duration-200 outline-none border-none' type="submit" value="Book" />
+                                <div className='flex md:gap-3 flex-col md:flex-row'>
+                                    <div className='my-3 w-full'>
+                                        <label className='font-semibold pb-1' htmlFor="">Your Address</label><br />
+                                        <input required type="text" name='address' placeholder='Your Address' className='px-2 py-1 border-slate-400 border outline-none border-none w-full' />
+                                    </div>
+                                    <div className='my-3 w-full'>
+                                        <label className='font-semibold pb-1' htmlFor="">Price</label><br />
+                                        <input required type="text" placeholder='Special Instructions' defaultValue={price} disabled name="price" className='px-2 py-1 border-slate-400 border w-full font-bold' />
+                                    </div>
+                                </div>
+                                <input className='px-1 py-1 mt-3 w-full bg-slate-600 cursor-pointer text-white hover:bg-pink-600 duration-200 outline-none border-none' type="submit" value="Purchase" />
                             </form>
                         </div>
                     </Box>
