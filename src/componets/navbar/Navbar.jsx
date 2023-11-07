@@ -27,7 +27,7 @@ const Navbar = () => {
         logOut()
             .then(() => {
                 toast("You have logout successfully", {
-                    position: "bottom-right",
+                    position: "top-right",
                     autoClose: 3000,
                     bg: "dark"
                 })
@@ -56,7 +56,6 @@ const Navbar = () => {
                             <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/">Home</NavLink></li>
                             <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/all-service">All Service</NavLink></li>
                             <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base font-semibold py-2 px-4 rounded-md" to="/my-schedule">My Schedule</NavLink></li>
-                            <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/my-bookings">Bookings</NavLink></li>
                             <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/contact">Contact</NavLink></li>
                         </ul>
                     </div>
@@ -73,7 +72,7 @@ const Navbar = () => {
                                         <Link to="/login">Login</Link>
                                     </div>}
                         </div>
-                        <div className={`absolute -bottom-16 -right-1/2 sm:right-1/3 p-4 z-[9999] bg-slate-500 ${toggle ? "block" : "hidden"}`}>
+                        <div className={`absolute -bottom-16 -right-1/2 sm:right-1/4 p-4 z-[9999] bg-slate-500 ${toggle ? "block" : "hidden"}`}>
                             <button className='text-white z-10 relative text-sm whitespace-nowrap' onClick={handleLogout}>Log out</button>
                             <div className="absolute w-10 h-10 bg-slate-500 rotate-45 top-0 left-1/2 -translate-x-1/2"></div>
                         </div>
@@ -87,7 +86,7 @@ const Navbar = () => {
                         <div onClick={(e) => e.stopPropagation()} className={`p-4 bg-slate-500 absolute top-full border z-[9999] min-w-[250px] duration-200 shadow-2xl shadow-slate-600 rounded-md ${!dashtoggle ? "right-[200%]" : "right-0"}`}>
                             <ul className='space-y-5'>
                                 <li className='text-white hover:text-slate-300 duration-200'><Link to="/add-service">Add Service</Link></li>
-                                <li className='text-white hover:text-slate-300 duration-200'><Link to="/my-service">My Service</Link></li>
+                                <li className='text-white hover:text-slate-300 duration-200'><Link to="/my-service">Manage My Service</Link></li>
                             </ul>
                             <div className="absolute w-10 h-10 bg-slate-500 rotate-45 top-0 -z-10 right-10"></div>
                         </div>

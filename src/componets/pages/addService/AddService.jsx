@@ -29,7 +29,7 @@ const AddService = () => {
             .then(res => {
                 if (res.data.insertedId) {
                     toast("Service Add Successfully", {
-                        position: "bottom-right",
+                        position: "top-right",
                         autoClose: 2000
                     })
                     form.reset();
@@ -37,7 +37,7 @@ const AddService = () => {
             })
             .catch(err => {
                 toast(err, {
-                    position: "bottom-right",
+                    position: "top-right",
                     autoClose: 2000
                 })
             })
@@ -72,9 +72,15 @@ const AddService = () => {
                             </div>
                             {/* Your name and Email */}
                             <div className='space-y-4'>
-                                <div className='pb-2'>
-                                    <label htmlFor="">Your Name</label><br />
-                                    <input type="text" className='w-full p-2 rounded-md focus:outline-primary text-black font-normal border' name='name' defaultValue={user?.displayName} disabled required />
+                                <div className='flex gap-3 items-center'>
+                                    <div className='pb-2 flex-1'>
+                                        <label htmlFor="">Your Name</label><br />
+                                        <input type="text" className='w-full p-2 rounded-md focus:outline-primary text-black font-normal border' name='name' defaultValue={user?.displayName} disabled required />
+                                    </div>
+                                    <div className='pb-2 flex-1'>
+                                        <label htmlFor="">Your Location</label><br />
+                                        <input type="text" className='w-full p-2 rounded-md focus:outline-primary text-black font-normal border' placeholder='Your Location' name='location' required />
+                                    </div>
                                 </div>
                                 <div className='flex gap-3 items-center'>
                                     <div className='flex-1'>
@@ -84,6 +90,7 @@ const AddService = () => {
                                     <div>
                                         <label htmlFor="">Your Email</label><br />
                                         <select name="category" required id="" className='w-full p-2 rounded-md focus:outline-primary text-black font-normal border'>
+                                            <option disabled>Select</option>
                                             <option value="Emergency Childcare">Emergency Childcare</option>
                                             <option value="Long Term">Long Term</option>
                                             <option value="ShortTerm">ShortTerm</option>

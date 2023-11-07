@@ -18,7 +18,7 @@ const IndividualService = ({ allService }) => {
                                 <p className='font-semibold text-primary'>Price: ${price}</p>
                                 <h4 className='text-xs sm:text-sm md:text-base'>Category: {category}</h4>
                                 <div className='flex justify-start gap-2 md:gap-5 w-full'>
-                                    <button className='bg-pink-700 text-sm md:text-base text-white px-1 py-1 md:px-2 hover:bg-pink-900 duration-300'>Book Now</button>
+                                    {/* <button className='bg-pink-700 text-sm md:text-base text-white px-1 py-1 md:px-2 hover:bg-pink-900 duration-300'>Book Now</button> */}
                                     <Link to={`/service-detail/${_id}`}><button className='bg-pink-700 text-sm md:text-base text-white px-1 py-1 md:px-2 hover:bg-pink-900 duration-300'>Details</button></Link>
                                 </div>
                             </div>

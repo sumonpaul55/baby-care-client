@@ -5,14 +5,14 @@ import Error from '../componets/Error';
 import Home from '../componets/pages/home/Home';
 import SignUp from '../componets/pages/SignUp';
 import MainLayout from '../layout/MainLayout';
-import Bookings from '../componets/pages/bookings/Bookings';
-import MySchedule from '../componets/pages/mySchedule/MySchedule';
+import Bookings from '../componets/pages/schedule/MySchedule';
 import AllService from '../componets/pages/allService/AllService';
 import Login from '../componets/pages/Login.jsx/Login';
 import PrivetRoute from './PrivetRoute';
 import Contact from '../componets/pages/Contact';
 import AddService from '../componets/pages/addService/AddService';
 import ServiceDetails from '../componets/pages/serviceDetail/ServiceDetails';
+import MyService from '../componets/pages/myServices/MyService';
 const routers = createBrowserRouter([
     {
         path: "/",
@@ -23,13 +23,13 @@ const routers = createBrowserRouter([
                 index: true,
                 element: <Home></Home>
             },
-            {
-                path: "/my-bookings",
-                element: <PrivetRoute><Bookings></Bookings></PrivetRoute>
-            },
+            // {
+            //     path: "/my-bookings",
+            //     element: <PrivetRoute></PrivetRoute>
+            // },
             {
                 path: "/my-schedule",
-                element: <PrivetRoute><MySchedule></MySchedule></PrivetRoute>
+                element: <PrivetRoute><Bookings></Bookings></PrivetRoute>
             },
             {
                 path: "/all-service",
@@ -44,6 +44,10 @@ const routers = createBrowserRouter([
             {
                 path: "/service-detail/:id",
                 element: <PrivetRoute><ServiceDetails></ServiceDetails></PrivetRoute>
+            },
+            {
+                path: "/my-service",
+                element: <PrivetRoute><MyService></MyService></PrivetRoute>
             }
         ],
     },

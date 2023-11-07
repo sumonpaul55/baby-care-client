@@ -8,14 +8,11 @@ import { useNavigate } from 'react-router-dom';
 // import HelmetProvider from '../../../shared/HelmetProvider';
 
 const DetailSingle = ({ singleDetailService }) => {
+    const { user } = useContext(AuthContextInfo)
     const { serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg, category, location } = singleDetailService;
     const useAxiosSecure = useAxios()
     const navigate = useNavigate()
-    // // setPageName(serviceName)
-    // if (serviceName) {
-    //     setPageName(serviceName)
-    // }
-    const { user } = useContext(AuthContextInfo)
+
     const handleBook = e => {
         e.preventDefault();
         setOpen(false);
@@ -23,17 +20,18 @@ const DetailSingle = ({ singleDetailService }) => {
         const serviceTakingData = form.date.value;
         const intructions = form.specialInstruction.value;
         const userAddress = form.address.value;
-        const status = "pendding";
+        const status = "pending";
         const userName = user?.displayName;
         const userEmail = user?.email;
+        const serviceProviderEmail = email;
         const bookedData = {
-            serviceImg, name, userName, status, userAddress, userEmail, intructions, serviceTakingData, price, location, serviceName
+            serviceImg, name, userName, status, userAddress, userEmail, intructions, serviceTakingData, price, location, serviceName, serviceProviderEmail
         }
         useAxiosSecure.post("/books", bookedData)
             .then(res => {
                 if (res.data.insertedId) {
                     toast(`Your Booking Successful`, {
-                        position: "bottom-right",
+                        position: "top-right",
                         autoClose: 2000
                     })
                     navigate(-1)
@@ -42,7 +40,7 @@ const DetailSingle = ({ singleDetailService }) => {
             .catch(err => {
                 toast(err, {
                     autoClose: 200,
-                    position: "bottom-right"
+                    position: "top-right"
                 })
             })
 
@@ -126,7 +124,7 @@ const DetailSingle = ({ singleDetailService }) => {
                                     </div>
                                     <div className='my-1 md:my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">Service Provier Email</label><br />
-                                        <input required type="text" name="userEmail" defaultValue={email} disabled className='px-2 py-1 border-slate-400 border w-full' />
+                                        <input required type="text" name="serviceProviderEmail" defaultValue={email} disabled className='px-2 py-1 border-slate-400 border w-full' />
                                     </div>
                                 </div>
                                 <div className='flex md:gap-3 flex-col md:flex-row'>

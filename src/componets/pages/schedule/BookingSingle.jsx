@@ -34,7 +34,7 @@ const BookingSingle = ({ bookedService, refetch }) => {
         });
     }
     return (
-        <div className='bg-slate-100 p-3 md:p-5 rounded-md my-3 py-5'>
+        <div className='bg-slate-200 p-3 md:p-5 rounded-md my-3 py-5 shadow-lg'>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center gap-4">
                 <div className='space-y-3'>
                     <h2 className='font-semibold'>Service Name: {serviceName}</h2>
