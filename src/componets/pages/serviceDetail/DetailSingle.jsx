@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 // import HelmetProvider from '../../../shared/HelmetProvider';
 
 const DetailSingle = ({ singleDetailService }) => {
-    const { _id, serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg, category, location } = singleDetailService;
+    const { serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg, category, location } = singleDetailService;
     const useAxiosSecure = useAxios()
     const navigate = useNavigate()
     // // setPageName(serviceName)
@@ -27,7 +27,7 @@ const DetailSingle = ({ singleDetailService }) => {
         const userName = user?.displayName;
         const userEmail = user?.email;
         const bookedData = {
-            serviceImg, name, userName, status, userAddress, userEmail, intructions, serviceTakingData, price, location,
+            serviceImg, name, userName, status, userAddress, userEmail, intructions, serviceTakingData, price, location, serviceName
         }
         useAxiosSecure.post("/books", bookedData)
             .then(res => {

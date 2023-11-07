@@ -4,12 +4,13 @@ import { useQuery } from '@tanstack/react-query';
 import useAxios from '../../../hooks/useAxios';
 import { AuthContextInfo } from '../../../authProvider/AuthProvider';
 import Loading from '../../../shared/Loading';
-import SingleService from '../allService/SingleService';
+// import SingleService from '../allService/SingleService';
+import BookingSingle from './BookingSingle';
 
 const Bookings = () => {
     const useAxiosSecure = useAxios()
     const { user } = useContext(AuthContextInfo)
-    const { data: bookedService, isLoading, isError, error } = useQuery({
+    const { data: bookedService, isLoading, isError, error, refetch } = useQuery({
         queryKey: ["bookedService"],
         queryFn: () => {
             return useAxiosSecure.get(`/my-bookings?email=${user?.email}`)
@@ -31,10 +32,10 @@ const Bookings = () => {
             <main
             ><div className='container mx-auto'>
                     <h1 className='text-4xl text-center font-bold mt-10'>Bookings</h1>
-                    <div>
+                    <div className='mt-10'>
                         {
                             bookedService?.data.map(items => {
-                                return <SingleService key={items._id} service={items}></SingleService>
+                                return <BookingSingle key={items._id} bookedService={items} refetch={refetch}></BookingSingle>
                             })
                         }
                     </div>

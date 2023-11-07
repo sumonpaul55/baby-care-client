@@ -17,7 +17,7 @@ const AllService = () => {
             return useAxiosSecure.get("/all-service")
         }
     })
-    console.log(filterdData, numberOfService)
+    // console.log(filterdData, numberOfService)
     // getting category as an uniq array
     const categories = []
     if (!isLoading) {
