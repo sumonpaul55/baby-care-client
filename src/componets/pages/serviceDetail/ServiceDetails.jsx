@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { } from 'react';
 // import HelmetProvider from '../../../shared/HelmetProvider';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import useAxios from '../../../hooks/useAxios';
 import Loading from '../../../shared/Loading';
 import DetailSingle from './DetailSingle';
+import HelmetProvider from '../../../shared/HelmetProvider';
 
 const ServiceDetails = () => {
     const useAxiosSecure = useAxios()
@@ -31,17 +32,19 @@ const ServiceDetails = () => {
     }
     return (
         <>
+            <HelmetProvider pagename="Service Detail"></HelmetProvider>
             <main className='py-10'>
                 <div className='container mx-auto'>
                     <div className=''>
                         {
-                            service.data.map(items => (
-                                <DetailSingle key={items._id} singleDetailService={items}></DetailSingle>
-                            ))
+                            service.data.map(items => {
+                                // setPageName(items.serviceName)
+                                return < DetailSingle key={items._id} singleDetailService={items} ></DetailSingle>
+                            })
                         }
                     </div>
                 </div>
-            </main>
+            </main >
         </>
     );
 };

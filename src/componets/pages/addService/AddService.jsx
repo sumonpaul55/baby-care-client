@@ -21,8 +21,9 @@ const AddService = () => {
         const about = form.about.value;
         const providerImg = user?.photoURL;
         const category = form.category.value;
+        const location = form.location.value;
 
-        const myService = { serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg, category }
+        const myService = { serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg, category, location }
         // console.log(myService)
         useAxiosSecure.post("/add-service", myService)
             .then(res => {

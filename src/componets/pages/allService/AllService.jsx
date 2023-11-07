@@ -17,7 +17,7 @@ const AllService = () => {
             return useAxiosSecure.get("/all-service")
         }
     })
-
+    console.log(filterdData, numberOfService)
     // getting category as an uniq array
     const categories = []
     if (!isLoading) {
@@ -29,6 +29,9 @@ const AllService = () => {
     // handle filter 
     const handleChange = e => {
         const filteredcategory = (e.target.value)
+        if (filteredcategory == "All") {
+            setfiltedData(services?.data)
+        }
         setfiltedData(services.data.filter(items => items.category.toLowerCase() === filteredcategory.toLocaleLowerCase()))
     }
     // console.log(filterdData)
@@ -53,22 +56,26 @@ const AllService = () => {
                                 </div>
                                 <div className='border border-slate-200 p-4 w-full sm:w-auto mr-3 rounded-md'>
                                     <select name="filterValue" id="" onChange={handleChange} className='focus:outline-slate-200'>
+                                        <option defaultValue="All">All</option>
                                         {uniqCate.map((items, idx) => <option key={idx} value={items}>{items}</option>)}
                                     </select>
                                 </div>
                             </div>
                             <div className='space-y-7'>
-                                {filterdData.length > 0 ? filterdData.slice(0, numberOfService).map((service) => (
-                                    <IndividualService key={service._id} allService={service}></IndividualService>
-                                )) :
-                                    services.data.slice(0, numberOfService).map((service) => (
+                                {
+                                    filterdData.length > 0 ? filterdData.slice(0, numberOfService).map((service) => (
                                         <IndividualService key={service._id} allService={service}></IndividualService>
-                                    ))
+                                    )) :
+                                        services.data.slice(0, numberOfService).map((service) => (
+                                            <IndividualService key={service._id} allService={service}></IndividualService>
+                                        ))
                                 }
                             </div>
                             <div className='text-center'>
                                 {
-                                    services.data.length > 6 && filterdData && numberOfService === 6 ? <button onClick={() => { setNumberOfService(services.length) }} className='mt-10 bg-primary px-2 md:px-4 py-1 md:py-2 text-white font-bold hover:bg-red-700 duration-200'>Show More</button> : null
+                                    // filterdData.length > 6 ? <button onClick={() => { setNumberOfService(services.length) }} className='mt-10 bg-primary px-2 md:px-4 py-1 md:py-2 text-white font-bold hover:bg-red-700 duration-200'>Show More</button>
+                                    //     :
+                                    services?.data?.length > 6 && numberOfService == 6 ? <button onClick={() => { setNumberOfService(services.length) }} className='mt-10 bg-primary px-2 md:px-4 py-1 md:py-2 text-white font-bold hover:bg-red-700 duration-200'>Show More</button> : null
                                 }
                             </div>
                         </div>
