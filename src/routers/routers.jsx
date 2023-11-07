@@ -13,6 +13,7 @@ import Contact from '../componets/pages/Contact';
 import AddService from '../componets/pages/addService/AddService';
 import ServiceDetails from '../componets/pages/serviceDetail/ServiceDetails';
 import MyService from '../componets/pages/myServices/MyService';
+import UpdateMyService from '../componets/pages/myServices/UpdateMyService';
 const routers = createBrowserRouter([
     {
         path: "/",
@@ -48,6 +49,11 @@ const routers = createBrowserRouter([
             {
                 path: "/my-service",
                 element: <PrivetRoute><MyService></MyService></PrivetRoute>
+            },
+            {
+                path: "/update-service/:id",
+                loader: ({ params }) => fetch(`http://localhost:5000/my-serviceData/${params.id}`),
+                element: <UpdateMyService></UpdateMyService>
             }
         ],
     },

@@ -17,7 +17,7 @@ const MyService = () => {
 
     })
 
-    console.log(MyService?.data)
+    // console.log(MyService?.data)
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -25,11 +25,12 @@ const MyService = () => {
         return <p>{error}</p>
     }
     return (
-        <div>
+        <div className='container mx-auto'>
+            <h2 className='text-center font-bold mt-2 text-xl'>My all Services</h2>
             <div className='container mx-auto grid gap-1 grid-cols-1'>
                 {
                     MyService?.data.length <= 0 ? <h3>You do not have any services</h3> :
-                        MyService?.data.map(items => <MyServiceSingle key={items._id} refetch={refetch} MyServiceSingle={items}></MyServiceSingle>)
+                        MyService?.data.map((items, idx) => <MyServiceSingle key={idx} refetch={refetch} MyServiceSingle={items}></MyServiceSingle>)
 
                 }
             </div>

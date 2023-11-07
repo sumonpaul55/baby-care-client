@@ -37,9 +37,9 @@ const ServiceDetails = () => {
                 <div className='container mx-auto'>
                     <div className=''>
                         {
-                            service.data.map(items => {
+                            service.data.map((items, idx) => {
                                 // setPageName(items.serviceName)
-                                return < DetailSingle key={items._id} singleDetailService={items} ></DetailSingle>
+                                return < DetailSingle key={idx} singleDetailService={items} ></DetailSingle>
                             })
                         }
                     </div>

@@ -63,11 +63,11 @@ const AllService = () => {
                             </div>
                             <div className='space-y-7'>
                                 {
-                                    filterdData.length > 0 ? filterdData.slice(0, numberOfService).map((service) => (
-                                        <IndividualService key={service._id} allService={service}></IndividualService>
+                                    filterdData.length > 0 ? filterdData.slice(0, numberOfService).map((service, ids) => (
+                                        <IndividualService key={ids} allService={service}></IndividualService>
                                     )) :
-                                        services.data.slice(0, numberOfService).map((service) => (
-                                            <IndividualService key={service._id} allService={service}></IndividualService>
+                                        services.data.slice(0, numberOfService).map((service, ids) => (
+                                            <IndividualService key={ids} allService={service}></IndividualService>
                                         ))
                                 }
                             </div>

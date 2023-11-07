@@ -36,8 +36,8 @@ const Home = () => {
                                 isLoading ? <Loading></Loading> : isError ? <p>{error}</p> :
                                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-20'>
                                         {
-                                            services.data.map(service => (
-                                                <SingleService key={service._id} service={service}></SingleService>))
+                                            services.data.map((service, idx) => (
+                                                <SingleService key={idx} service={service}></SingleService>))
                                         }
                                     </div>
                             }

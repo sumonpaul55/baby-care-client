@@ -46,8 +46,8 @@ const Bookings = () => {
                         <h1 className='md:text-xl font-bold'>My Bookings</h1>
                         {
 
-                            bookedService?.data.map(items => {
-                                return <BookingSingle key={items._id} bookedService={items} refetch={refetch}></BookingSingle>
+                            bookedService?.data.map((items, idx) => {
+                                return <BookingSingle key={idx} bookedService={items} refetch={refetch}></BookingSingle>
                             })
                         }
                     </div>
@@ -59,8 +59,8 @@ const Bookings = () => {
                             {
                                 pendingService?.data.length <= 0 ?
                                     <h2 className='text-center mt-8 text-xl'> No Pending Works Available</h2> :
-                                    pendingService?.data.map(items => {
-                                        return <PendingPerService key={items._id} pendingServce={items} prendingRefatch={prendingRefatch}></PendingPerService>
+                                    pendingService?.data.map((items, idx) => {
+                                        return <PendingPerService key={idx} pendingServce={items} prendingRefatch={prendingRefatch}></PendingPerService>
                                     })
                             }
                         </div>

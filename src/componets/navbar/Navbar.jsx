@@ -56,6 +56,7 @@ const Navbar = () => {
                             <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/">Home</NavLink></li>
                             <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/all-service">All Service</NavLink></li>
                             <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base font-semibold py-2 px-4 rounded-md" to="/my-schedule">My Schedule</NavLink></li>
+                            <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/my-service">My Services</NavLink></li>
                             <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/contact">Contact</NavLink></li>
                         </ul>
                     </div>

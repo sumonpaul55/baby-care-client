@@ -1,12 +1,12 @@
 import React from 'react';
 import useAxios from '../../../hooks/useAxios';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyServiceSingle = ({ MyServiceSingle, refetch }) => {
     const useAxiosSecure = useAxios()
     const { serviceName, serviceImg, serviceArea, price, serviceDescription, _id } = MyServiceSingle;
     const handleDelete = (id) => {
-
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -37,8 +37,6 @@ const MyServiceSingle = ({ MyServiceSingle, refetch }) => {
 
             }
         });
-
-
     }
     return (
         <div className='p-5 md:p-4 bg-slate-300 m-1 md:m-4 rounded-md shadow-lg'>
@@ -53,7 +51,7 @@ const MyServiceSingle = ({ MyServiceSingle, refetch }) => {
                     <img src={serviceImg} className='w-full md:w-full lg:auto' alt={serviceName} />
                 </div>
                 <div className='flex gap-4w-full gap-5 h-full items-end lg:items-center'>
-                    <button className='w-full sm:w-auto px-2 bg-primary text-white font-semibold sm:px-3 py-1'>Update</button>
+                    <Link to={`/update-service/${_id}`}><button className='w-full sm:w-auto px-2 bg-primary text-white font-semibold sm:px-3 py-1'>Update</button></Link>
                     <button className='w-full sm:w-auto px-2 bg-primary text-white font-semibold sm:px-3 py-1' onClick={() => handleDelete(_id)}>Delete</button>
                 </div>
             </div>
