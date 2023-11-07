@@ -23,14 +23,14 @@ const Login = () => {
         logIn(email, password)
             .then(res => {
                 toast(`Welcome back ${res.user.displayName}`, {
-                    position: "top-center",
+                    position: "bottom-right",
                     autoClose: 2000
                 })
                 navigate(state ? state : "/")
             })
             .catch(err => {
                 toast(`User or Password may have wrong`, {
-                    position: "top-center"
+                    position: "bottom-right"
                 })
             })
     }
@@ -39,7 +39,7 @@ const Login = () => {
             .then(res => {
                 res.user && toast(`Welcome ${res.user.displayName}`, {
                     autoClose: 2000,
-                    position: "top-center"
+                    position: "bottom-right"
                 })
                 navigate(state ? state : "/")
             })

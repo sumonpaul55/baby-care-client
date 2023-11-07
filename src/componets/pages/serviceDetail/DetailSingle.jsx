@@ -33,7 +33,7 @@ const DetailSingle = ({ singleDetailService }) => {
             .then(res => {
                 if (res.data.insertedId) {
                     toast(`Your Booking Successful`, {
-                        position: "top-center",
+                        position: "bottom-right",
                         autoClose: 2000
                     })
                     navigate(-1)
@@ -42,7 +42,7 @@ const DetailSingle = ({ singleDetailService }) => {
             .catch(err => {
                 toast(err, {
                     autoClose: 200,
-                    position: "top-center"
+                    position: "bottom-right"
                 })
             })
 
@@ -52,11 +52,11 @@ const DetailSingle = ({ singleDetailService }) => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        maxWidth: "800px",
+        // width: 500,
         bgcolor: '#ccd',
         border: '2px solid #000',
         boxShadow: 24,
-        p: 4,
+        p: 1,
     };
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -105,51 +105,51 @@ const DetailSingle = ({ singleDetailService }) => {
                     aria-describedby="modal-modal-description">
                     <Box sx={style}>
                         <h3 className='font-semibold text-base'> Booking Information:</h3>
-                        <div>
+                        <div className='md:max-w-[700px] mx-auto'>
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
-                                <img src={serviceImg} className='' alt="" />
+                                <img src={serviceImg} className='hidden md:block' alt="" />
                                 <div>
-                                    <span className='font-semibold'>Service Provider Info:</span>
+                                    <span className='font-semibold hidden md:block'>Service Provider Info:</span>
                                     <p className='font-semibold mt-4 text-xs md:text-base'>Name: {name}</p>
                                     <address>Address: {location}</address>
                                 </div>
                             </div>
                             <form onSubmit={handleBook} className=''>
                                 <div className='flex md:gap-3 md:flex-row flex-col'>
-                                    <div className='my-3 w-full'>
+                                    <div className='my-1 md:my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">Service Name</label><br />
-                                        <input required type="text" defaultValue={serviceName} disabled name='serviceName' className='px-2 py-1 border-slate-400 border outline-none border-none w-full' />
+                                        <input required type="text" defaultValue={serviceName} disabled name='serviceName' className='px-2 py-1 border-slate-400 border outline-none border-none text-xs md:text-base w-full' />
                                     </div>
-                                    <div className='my-3 w-full'>
+                                    <div className='my-1 md:my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">User Email</label><br />
                                         <input required type="text" name="userEmail" defaultValue={user?.email} disabled className='px-2 py-1 border-slate-400 border w-full' />
                                     </div>
-                                    <div className='my-3 w-full'>
+                                    <div className='my-1 md:my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">Service Provier Email</label><br />
                                         <input required type="text" name="userEmail" defaultValue={email} disabled className='px-2 py-1 border-slate-400 border w-full' />
                                     </div>
                                 </div>
                                 <div className='flex md:gap-3 flex-col md:flex-row'>
-                                    <div className='my-3 w-full'>
+                                    <div className='my-1 md:my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">Service Taking Date</label><br />
-                                        <input required type="date" name='date' className='px-2 py-1 border-slate-400 border outline-none border-none w-full' />
+                                        <input required type="date" name='date' className='px-2 py-1 border-slate-400 border outline-none border-none text-xs md:text-base w-full' />
                                     </div>
-                                    <div className='my-3 w-full'>
+                                    <div className='my-1 md:my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">Special Instructions</label><br />
                                         <input required type="text" placeholder='Special Instructions' name="specialInstruction" className='px-2 py-1 border-slate-300 border w-full' />
                                     </div>
                                 </div>
                                 <div className='flex md:gap-3 flex-col md:flex-row'>
-                                    <div className='my-3 w-full'>
+                                    <div className='my-1 md:my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">Your Address</label><br />
-                                        <input required type="text" name='address' placeholder='Your Address' className='px-2 py-1 border-slate-400 border outline-none border-none w-full' />
+                                        <input required type="text" name='address' placeholder='Your Address' className='px-2 py-1 border-slate-400 border outline-none border-none text-xs md:text-base w-full' />
                                     </div>
-                                    <div className='my-3 w-full'>
+                                    <div className='my-1 md:my-3 w-full'>
                                         <label className='font-semibold pb-1' htmlFor="">Price</label><br />
                                         <input required type="text" placeholder='Special Instructions' defaultValue={price} disabled name="price" className='px-2 py-1 border-slate-400 border w-full font-bold' />
                                     </div>
                                 </div>
-                                <input className='px-1 py-1 mt-3 w-full bg-slate-600 cursor-pointer text-white hover:bg-pink-600 duration-200 outline-none border-none' type="submit" value="Purchase" />
+                                <input className='px-1 py-1 mt-3 w-full bg-slate-600 cursor-pointer text-white hover:bg-pink-600 duration-200 outline-none border-none text-xs md:text-base' type="submit" value="Purchase" />
                             </form>
                         </div>
                     </Box>
