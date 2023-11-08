@@ -10,6 +10,7 @@ import useAxios from '../../../hooks/useAxios';
 import { useQuery } from '@tanstack/react-query';
 import Loading from '../../../shared/Loading';
 import SingleService from '../allService/SingleService';
+import Popular from './Popular';
 const Home = () => {
     const useAxiosSecure = useAxios();
     const { data: services, isError, error, isLoading } = useQuery({
@@ -19,7 +20,12 @@ const Home = () => {
         }
     })
     // console.log(services, isError, isLoading, error)
-
+    const { data: popularService, isLoading: ispopularLoading } = useQuery({
+        queryKey: ["popularService"],
+        queryFn: () => {
+            return useAxiosSecure.get('/popular-service')
+        }
+    })
     return (
         <>
             <Helmet>
@@ -63,7 +69,17 @@ const Home = () => {
                 </section>
                 {/* popular section */}
                 <section className='py-20 bg-slate-300'>
-
+                    <div className='container mx-auto'>
+                        <h2 className='text-xl font-bold py-9 md:text-3xl'>Our Popular Services</h2>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-16'>
+                            {
+                                ispopularLoading ? <Loading></Loading> :
+                                    popularService?.data?.map((items, idx) => {
+                                        return <Popular key={idx} popular={items}></Popular>
+                                    })
+                            }
+                        </div>
+                    </div>
                 </section>
             </main>
         </>
