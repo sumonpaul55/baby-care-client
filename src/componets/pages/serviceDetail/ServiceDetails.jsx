@@ -17,7 +17,6 @@ const ServiceDetails = () => {
             return useAxiosSecure.get(`/service/${id}`)
         }
     })
-
     if (isLoading) {
         return <Loading></Loading>
     }

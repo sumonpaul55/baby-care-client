@@ -32,6 +32,7 @@ const Navbar = () => {
                     bg: "dark"
                 })
                 navigate("/")
+
             }).catch(err => {
                 toast(err)
             })

@@ -46,7 +46,7 @@ const Bookings = () => {
                         <h1 className='md:text-xl font-bold'>My Bookings</h1>
                         {
 
-                            bookedService?.data.map((items, idx) => {
+                            bookedService?.data?.map((items, idx) => {
                                 return <BookingSingle key={idx} bookedService={items} refetch={refetch}></BookingSingle>
                             })
                         }

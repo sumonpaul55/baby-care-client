@@ -61,6 +61,10 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
+                {/* popular section */}
+                <section className='py-20 bg-slate-300'>
+
+                </section>
             </main>
         </>
     );

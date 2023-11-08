@@ -25,15 +25,16 @@ const AuthProvider = ({ children }) => {
     }
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (curentUser) => {
+            const userEmail = { email: curentUser?.email || user?.email }
+            const loogedInuser = { email: userEmail.email }
             setUser(curentUser)
             setLoading(false)
-            // const email = curentUser?.email;
-            // console.log(email)
-            const userEmail = { email: curentUser?.email }
-            if (curentUser?.email) {
-                useAxiosSecure.post("/jsonwebtoken", userEmail)
+            if (curentUser) {
+                useAxiosSecure.post("/jsonwebtoken", loogedInuser)
                     .then()
                     .catch();
+            } else {
+                useAxiosSecure.post("/logout", loogedInuser)
             }
         })
         return () => {
