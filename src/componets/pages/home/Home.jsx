@@ -74,7 +74,7 @@ const Home = () => {
                     </div>
                 </section>
                 {/* popular section */}
-                <section className='py-20 bg-slate-300'>
+                <section className='py-32 bg-slate-300'>
                     <div className='container mx-auto'>
                         <h2 className='text-xl font-bold py-9 md:text-3xl'>Our Popular Services</h2>
                         <div className='grid grid-cols-1 m-2 md:grid-cols-2 lg:grid-cols-4 gap-7 md:gap-8'>
@@ -87,21 +87,21 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <section className='py-20 bg-slate-300'>
+                <section className='py-10'>
                     <div className='container mx-auto'>
                         <h2 className='text-xl font-bold py-9 md:text-3xl'>Frequently Asked Questions</h2>
                         <div className='gap-5 grid grid-cols-1 md:grid-cols-2 items-center'>
                             <div className='max-w-[550px]'>
                                 <Lottie animationData={faq} loop={true} />
                             </div>
-                            <div>
+                            <div className='m-2'>
                                 <Accordion>
                                     <AccordionSummary
                                         expandIcon={<BiDownArrow />}
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                     >
-                                        <Typography>What is LittleStar Baby Care?</Typography>
+                                        <Typography style={{ fontWeight: "600" }}>What is LittleStar Baby Care?</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
@@ -115,7 +115,7 @@ const Home = () => {
                                         aria-controls="panel2a-content"
                                         id="panel2a-header"
                                     >
-                                        <Typography>How can I contact LittleStar Baby Care?</Typography>
+                                        <Typography style={{ fontWeight: "600" }}>How can I contact LittleStar Baby Care?</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
@@ -129,7 +129,7 @@ const Home = () => {
                                         aria-controls="panel2a-content"
                                         id="panel2a-header"
                                     >
-                                        <Typography>Do you have certified staff and caregivers?</Typography>
+                                        <Typography style={{ fontWeight: "600" }}>Do you have certified staff and caregivers?</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
@@ -143,7 +143,7 @@ const Home = () => {
                                         aria-controls="panel2a-content"
                                         id="panel2a-header"
                                     >
-                                        <Typography>What are your operating hours?</Typography>
+                                        <Typography style={{ fontWeight: "600" }}>What are your operating hours?</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
@@ -157,7 +157,7 @@ const Home = () => {
                                         aria-controls="panel2a-content"
                                         id="panel2a-header"
                                     >
-                                        <Typography>Is LittleStar Baby Care licensed and regulated?</Typography>
+                                        <Typography style={{ fontWeight: "600" }}>Is LittleStar Baby Care licensed and regulated?</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>

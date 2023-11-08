@@ -29,7 +29,7 @@ const MyService = () => {
             <h2 className='text-center font-bold mt-2 text-xl'>My all Services</h2>
             <div className='container mx-auto grid gap-1 grid-cols-1'>
                 {
-                    MyService?.data.length <= 0 ? <h3>You do not have any services</h3> :
+                    MyService?.data.length <= 0 ? <h3 className='font-bold my-16 px-1 md:text-2xl'>You do not have any services</h3> :
                         MyService?.data.map((items, idx) => <MyServiceSingle key={idx} refetch={refetch} MyServiceSingle={items}></MyServiceSingle>)
 
                 }
