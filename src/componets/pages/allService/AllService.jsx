@@ -21,7 +21,7 @@ const AllService = () => {
     // getting category as an uniq array
     const categories = []
     if (!isLoading) {
-        services.data.map(items => {
+        services?.data?.map(items => {
             categories.push(items.category)
         })
     }
@@ -66,7 +66,7 @@ const AllService = () => {
                                     filterdData.length > 0 ? filterdData.slice(0, numberOfService).map((service, ids) => (
                                         <IndividualService key={ids} allService={service}></IndividualService>
                                     )) :
-                                        services.data.slice(0, numberOfService).map((service, ids) => (
+                                        services?.data?.slice(0, numberOfService).map((service, ids) => (
                                             <IndividualService key={ids} allService={service}></IndividualService>
                                         ))
                                 }

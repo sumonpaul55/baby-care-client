@@ -11,7 +11,7 @@ const PendingPerService = ({ pendingServce, prendingRefatch }) => {
         const selectedField = { status: selectStatus.current.value }
         useAxiosSecure.patch(`/update-booking-service-status/${_id}`, selectedField)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 if (res.data.modifiedCount) {
                     Swal.fire({ title: "Status Updated Successfull", icon: "success" })
                 }
@@ -39,9 +39,9 @@ const PendingPerService = ({ pendingServce, prendingRefatch }) => {
                     <div className='p-4 border mt-4 bg-pink-600'>
                         <div className='flex gap-2'>
                             <select name="status" id="" className='border w-full px-3' ref={selectStatus}>
-                                <option defaultValue="pending">Pending</option>
-                                <option value="in-progress">In-Progress</option>
-                                <option value="complete">Complate</option>
+                                <option defaultValue="pending">pending</option>
+                                <option value="in-progress">in-progress</option>
+                                <option value="complete">complate</option>
                             </select>
                             <button onClick={() => handleStatus(_id)} className='px-1 font-bold cursor-pointer bg-white text-primary'>Update</button>
                         </div>

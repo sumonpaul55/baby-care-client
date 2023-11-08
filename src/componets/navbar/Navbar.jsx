@@ -69,8 +69,8 @@ const Navbar = () => {
                                         <h3 className='text-xs hidden sm:block'>{user?.displayName}</h3>
                                     </div> :
                                     <div className='flex items-center gap-1'>
-                                        <span><RxAvatar /></span>
-                                        <Link to="/login">Login</Link>
+                                        <Link to="/login" className='flex items-center gap-1'>
+                                            <span><RxAvatar /></span>Login</Link>
                                     </div>}
                         </div>
                         <div className={`absolute -bottom-16 -right-1/2 sm:right-1/4 p-4 z-[9999] bg-slate-500 ${toggle ? "block" : "hidden"}`}>
