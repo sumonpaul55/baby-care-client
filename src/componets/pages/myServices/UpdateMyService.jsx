@@ -1,12 +1,13 @@
 import { } from '@tanstack/react-query';
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import useAxios from '../../../hooks/useAxios';
 import { toast } from 'react-toastify';
 
 const UpdateMyService = () => {
     const useAxiosSecure = useAxios();
     const service = useLoaderData()[0];
+    const navigate = useNavigate();
     const { _id, serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg, category, location } = service
     const handleUpdate = e => {
         e.preventDefault();
@@ -32,6 +33,7 @@ const UpdateMyService = () => {
                         autoClose: 2000,
                         position: "top-right"
                     })
+                    navigate(-1)
                 }
             }).catch(err => {
                 toast(`${err}`, {

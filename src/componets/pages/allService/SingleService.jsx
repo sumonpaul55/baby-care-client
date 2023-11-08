@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const SingleService = ({ service }) => {
     const { serviceArea, serviceImg, serviceName, serviceDescription, price, name, about, providerImg, _id } = service;
+    // console.log(_id)
 
     return (
         <div className='shadow hover:shadow-lg p-3 md:p-5 rounded-md hover:bg-slate-50 duration-200'>
@@ -28,7 +29,7 @@ const SingleService = ({ service }) => {
                     </div>
                     <div className=''>
                         {
-                            providerImg ? <img src={providerImg} className='w-20 h-20 rounded-full' /> :
+                            providerImg ? <img src={providerImg} referrerPolicy='no-referrer' className='w-20 h-20 rounded-full' /> :
                                 <span className='text-5xl'><RxAvatar /></span>
                         }
                     </div>

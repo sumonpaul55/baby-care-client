@@ -24,10 +24,6 @@ const routers = createBrowserRouter([
                 index: true,
                 element: <Home></Home>
             },
-            // {
-            //     path: "/my-bookings",
-            //     element: <PrivetRoute></PrivetRoute>
-            // },
             {
                 path: "/my-schedule",
                 element: <PrivetRoute><Bookings></Bookings></PrivetRoute>
@@ -39,7 +35,7 @@ const routers = createBrowserRouter([
                 path: "/contact",
                 element: <Contact></Contact>
             }, {
-                path: "add-service",
+                path: "/add-service",
                 element: <PrivetRoute><AddService></AddService></PrivetRoute>
             },
             {

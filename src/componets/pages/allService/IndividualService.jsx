@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const IndividualService = ({ allService }) => {
-    // console.log(Object.keys(allService).join(","))
-    const { _id, serviceArea, serviceImg, serviceName, serviceDescription, price, name, providerImg, category } = allService
+    const { serviceArea, serviceImg, serviceName, serviceDescription, price, name, providerImg, category } = allService;
+    const id = allService._id;
     return (
         <>
             <div className='p-3 md:p-5 shadow-md md:m-5 bg-slate-200 rounded-lg'>
@@ -19,7 +19,7 @@ const IndividualService = ({ allService }) => {
                                 <h4 className='text-xs sm:text-sm md:text-base'>Category: {category}</h4>
                                 <div className='flex justify-start gap-2 md:gap-5 w-full'>
                                     {/* <button className='bg-pink-700 text-sm md:text-base text-white px-1 py-1 md:px-2 hover:bg-pink-900 duration-300'>Book Now</button> */}
-                                    <Link to={`/service-detail/${_id}`}><button className='bg-pink-700 text-sm md:text-base text-white px-1 py-1 md:px-2 hover:bg-pink-900 duration-300'>Details</button></Link>
+                                    <Link to={`/service-detail/${id}`}><button className='bg-pink-700 text-sm md:text-base text-white px-1 py-1 md:px-2 hover:bg-pink-900 duration-300'>Details</button></Link>
                                 </div>
                             </div>
                             {/* <p>{serviceDescription}</p> */}
