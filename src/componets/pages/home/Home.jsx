@@ -55,7 +55,11 @@ const Home = () => {
                             }
                         </div>
                         <div className="text-center mt-5">
-                            <Link to='/all-service' className='text-primary font-bold md:text-xl text-center inline-block border border-transparent duration-200 rounded-md mx-auto hover:border-primary px-3 py-2'>Show All</Link>
+                            {
+                                !isLoading && services?.data.length > 5 ?
+                                    <Link to='/all-service' className='text-primary font-bold md:text-xl text-center inline-block border border-transparent duration-200 rounded-md mx-auto hover:border-primary px-3 py-2'>Show All</Link>
+                                    : null
+                            }
                         </div>
                     </div>
                 </section>

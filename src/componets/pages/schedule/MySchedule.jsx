@@ -36,7 +36,7 @@ const Bookings = () => {
     }
     return (
         <>
-            <HelmetProvider pagename="Bookings"></HelmetProvider>
+            <HelmetProvider pagename="My Schedule"></HelmetProvider>
             <main>
                 <div className='py-10 bg-slate-300 '>
                     <h1 className='text-lg md:text-3xl text-center font-bold'>All Sechedules</h1>

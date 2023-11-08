@@ -24,7 +24,7 @@ const BookingSingle = ({ bookedService, refetch }) => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: `${<span className='text-primary'>{serviceName}</span>} has been deleted.`,
+                                text: `Service has been deleted.`,
                                 icon: "success"
                             });
                             refetch()

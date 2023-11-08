@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from "../assets/logo.png"
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <>
@@ -14,10 +15,9 @@ const Footer = () => {
                         </div>
 
                         <div className="col-span-1">
-                            <h4 className="font-semibold text-gray-100">Important links</h4>
-
+                            <h4 className="font-semibold text-gray-100">Contact</h4>
                             <div className="mt-3 grid space-y-3">
-                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">Pricing</a></p>
+                                <p><Link to="/contact" className='className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"'>Contact us</Link></p>
                                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">Changelog</a></p>
                                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">Docs</a></p>
                             </div>
@@ -25,7 +25,6 @@ const Footer = () => {
 
                         <div className="col-span-1">
                             <h4 className="font-semibold text-gray-100">Company</h4>
-
                             <div className="mt-3 grid space-y-3">
                                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">About us</a></p>
                                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">Blog</a></p>
@@ -35,7 +34,6 @@ const Footer = () => {
                         </div>
                         <div className="col-span-2">
                             <h4 className="font-semibold text-gray-100">Stay up to date</h4>
-
                             <form>
                                 <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white rounded-lg p-2 dark:bg-gray-800">
                                     <div className="w-full">
@@ -50,12 +48,19 @@ const Footer = () => {
                                     New UI kits or big discounts. Never spam.
                                 </p>
                             </form>
+                            <div className='mt-5 text-white'>
+                                <address className='text-sm lg:text-base'>Phone: 012345647897</address>
+                                <address className='text-sm lg:text-base'>Address: Mujibnogor, Sadar, Mymensingh</address>
+                                <p className='text-sm lg:text-base'>Email: sumonpaul@gmail.com</p>
+
+                            </div>
+
                         </div>
                     </div>
 
                     <div className="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
                         <div className="flex justify-between items-center">
-                            <p className="text-sm text-gray-400">© 2022 Preline. All rights reserved.</p>
+                            <p className="text-sm text-gray-400">© 20232 littlestarscare. All rights reserved.</p>
                         </div>
 
                         <div>

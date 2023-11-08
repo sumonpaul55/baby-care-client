@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion"
 const Popular = ({ popular }) => {
-    console.log(popular)
     const { serviceName, serviceImg, serviceDescription } = popular;
     return (
         <motion.div
@@ -18,5 +17,4 @@ const Popular = ({ popular }) => {
         </motion.div >
     );
 };
-
 export default Popular;

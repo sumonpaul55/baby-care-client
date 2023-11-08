@@ -50,7 +50,7 @@ const SignUp = () => {
         <main className='py-20 bg-slate-400 lg:h-screen'>
             <div className="container mx-auto">
                 <div className='max-w-[600px] mx-auto border rounded-lg p-4 md:p-10 shadow-lg'>
-                    <h2 className='mb-5 font-bold text-center md:text-xl'>Please Sign Up</h2>
+                    <h2 className='mb-5 font-bold text-center md:text-xl'>Please Register</h2>
                     <form onSubmit={handleSignup}>
                         <div className='space-y-6 font-semibold'>
                             <div>
