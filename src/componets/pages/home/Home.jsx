@@ -11,6 +11,10 @@ import { useQuery } from '@tanstack/react-query';
 import Loading from '../../../shared/Loading';
 import SingleService from '../allService/SingleService';
 import Popular from './Popular';
+import Lottie from 'lottie-react';
+import faq from "../../../assets/faq.json"
+import { BiDownArrow } from "react-icons/bi"
+import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 const Home = () => {
     const useAxiosSecure = useAxios();
     const { data: services, isError, error, isLoading } = useQuery({
@@ -26,6 +30,8 @@ const Home = () => {
             return useAxiosSecure.get('/popular-service')
         }
     })
+    // accordion related code 
+
     return (
         <>
             <Helmet>
@@ -71,13 +77,95 @@ const Home = () => {
                 <section className='py-20 bg-slate-300'>
                     <div className='container mx-auto'>
                         <h2 className='text-xl font-bold py-9 md:text-3xl'>Our Popular Services</h2>
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-16'>
+                        <div className='grid grid-cols-1 m-2 md:grid-cols-2 lg:grid-cols-4 gap-7 md:gap-8'>
                             {
                                 ispopularLoading ? <Loading></Loading> :
                                     popularService?.data?.map((items, idx) => {
                                         return <Popular key={idx} popular={items}></Popular>
                                     })
                             }
+                        </div>
+                    </div>
+                </section>
+                <section className='py-20 bg-slate-300'>
+                    <div className='container mx-auto'>
+                        <h2 className='text-xl font-bold py-9 md:text-3xl'>Frequently Asked Questions</h2>
+                        <div className='gap-5 grid grid-cols-1 md:grid-cols-2 items-center'>
+                            <div className='max-w-[550px]'>
+                                <Lottie animationData={faq} loop={true} />
+                            </div>
+                            <div>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<BiDownArrow />}
+                                        aria-controls="panel1a-content"
+                                        id="panel1a-header"
+                                    >
+                                        <Typography>What is LittleStar Baby Care?</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                            LittleStar Baby Care is a trusted provider of childcare services for families. We offer a range of services designed to meet the unique needs of babies and children, including daycare, early childhood education, and babysitting services.
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<BiDownArrow />}
+                                        aria-controls="panel2a-content"
+                                        id="panel2a-header"
+                                    >
+                                        <Typography>How can I contact LittleStar Baby Care?</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                            You can reach us by phone at 01234567489, by email at dhaka, or visit our physical location at dhaka. We are also available through our contact form on our website.
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<BiDownArrow />}
+                                        aria-controls="panel2a-content"
+                                        id="panel2a-header"
+                                    >
+                                        <Typography>Do you have certified staff and caregivers?</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                            Yes, we have a team of dedicated and qualified caregivers who are certified in early childhood education and are experienced in providing the best care for children.
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<BiDownArrow />}
+                                        aria-controls="panel2a-content"
+                                        id="panel2a-header"
+                                    >
+                                        <Typography>What are your operating hours?</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                            Our operating hours may vary depending on the specific service and location. Generally, we offer full-day care during weekdays, and we also provide extended hours for parents with busy schedules. Please contact us for the specific hours of operation at the location of your choice.
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                                <Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<BiDownArrow />}
+                                        aria-controls="panel2a-content"
+                                        id="panel2a-header"
+                                    >
+                                        <Typography>Is LittleStar Baby Care licensed and regulated?</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography>
+                                            Yes, we are fully licensed and regulated, complying with all state and local regulations to ensure the safety and well-being of the children in our care.
+                                        </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
+                            </div>
                         </div>
                     </div>
                 </section>
