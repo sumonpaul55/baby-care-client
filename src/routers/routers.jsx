@@ -48,7 +48,7 @@ const routers = createBrowserRouter([
             },
             {
                 path: "/update-service/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
+                loader: ({ params }) => fetch(`https://littlestarscare-server.vercel.app/${params.id}`),
                 element: <UpdateMyService></UpdateMyService>
             }
         ],
