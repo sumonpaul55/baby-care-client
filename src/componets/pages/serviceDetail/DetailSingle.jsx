@@ -62,17 +62,12 @@ const DetailSingle = ({ singleDetailService }) => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
-    // gettinng similar category service
     const { data: simislarService, isError, error, isLoading } = useQuery({
         queryKey: ["similarService"],
         queryFn: () => {
             return useAxiosSecure.get(`/similar?category=${category}`)
         }
     })
-
-    // console.log()
-
     return (
         <>
             <div>
@@ -86,7 +81,6 @@ const DetailSingle = ({ singleDetailService }) => {
                             </div>
                             <address className='text-base md:text-lg font-semibold text-primary'><span className='text-black'>Service Area:</span> {serviceArea}</address>
                             <p className='text-xs my-3 md:text-base'>{serviceDescription}</p>
-
                         </div>
                     </div>
                     <div className='p-3 md:p-4 flex flex-col justify-between'>
@@ -107,7 +101,6 @@ const DetailSingle = ({ singleDetailService }) => {
                     </div>
                 </div>
             </div>
-
             {/* modal */}
             <div>
                 <Modal
@@ -171,7 +164,7 @@ const DetailSingle = ({ singleDetailService }) => {
                 <h1 className='font-bold md:text-lg'>Explore Similer Services</h1>
                 {
                     isLoading && <Loading></Loading> ? isError && <p>{error}</p> :
-                        <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-10 mt-10'>
+                        <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-10 mt-10'>
                             {simislarService?.data.map((items, idx) => {
                                 return <SimilarSingle key={idx} similarData={items}></SimilarSingle>
                             })}
