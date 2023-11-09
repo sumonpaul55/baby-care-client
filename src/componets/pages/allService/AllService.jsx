@@ -55,7 +55,7 @@ const AllService = () => {
                             <div className='flex justify-between items-start sm:flex-row flex-col gap-5 px-4 sm:items-center mb-2'>
                                 <div className='border border-slate-200 p-4 w-full sm:w-auto mr-3 rounded-md hidden sm:block'>
                                     <p className='capitalize font-semibold text-xs md:text-base'>Search By Service Name</p>
-                                    <input type="text" className='w-full bg-slate-200 rounded-md p-1 px-2 outline-0' onChange={handleSearch} placeholder='' />
+                                    <input type="text" placeholder="Service Name" className='w-full bg-slate-200 rounded-md p-1 px-2 outline-0' onChange={handleSearch} />
                                 </div>
                                 <div className='border border-slate-200 p-4 w-full sm:w-auto mr-3 rounded-md'>
                                     <p className='capitalize font-semibold text-xs md:text-base'>Filter By Category</p>
