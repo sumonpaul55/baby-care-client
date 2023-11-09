@@ -6,7 +6,7 @@ const Popular = ({ popular }) => {
     return (
         <motion.div
             whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.8 }}
+            whileTap={{ scale: 1 }}
         >
             <div className='bg-white p-3 rounded-lg shadow-lg'>
                 <div>
