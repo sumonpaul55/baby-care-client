@@ -29,7 +29,7 @@ const AddService = () => {
             .then(res => {
                 if (res.data.insertedId) {
                     toast("Service Add Successfully", {
-                        position: "top-right",
+                        position: "top-center",
                         autoClose: 2000
                     })
                     form.reset();
@@ -37,7 +37,7 @@ const AddService = () => {
             })
             .catch(err => {
                 toast(err, {
-                    position: "top-right",
+                    position: "top-center",
                     autoClose: 2000
                 })
             })

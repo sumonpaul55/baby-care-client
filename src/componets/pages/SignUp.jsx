@@ -25,11 +25,11 @@ const SignUp = () => {
                         photoURL: photo,
                     }).then().catch()
                 }
-                toast(`Welcome ${name}`, { position: "top-right", autoClose: 2000 });
+                toast(`Welcome ${name}`, { position: "top-center", autoClose: 2000 });
                 navigate(state ? state : "/")
             })
             .catch(err => {
-                toast(`${err.message}`, { position: "top-right", })
+                toast(`${err.message}`, { position: "top-center", })
             })
         form.reset();
     }
@@ -39,7 +39,7 @@ const SignUp = () => {
             .then(res => {
                 res.user && toast(`Welcome back ${res.user.displayName}`, {
                     autoClose: 2000,
-                    position: "top-right"
+                    position: "top-center"
                 })
                 navigate(state ? state : "/")
             }).catch(err => {

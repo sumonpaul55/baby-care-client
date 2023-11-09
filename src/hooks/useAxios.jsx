@@ -27,7 +27,7 @@ const useAxios = () => {
                 logOut()
                     .then(() => {
                         toast("You have loggout for You UnAuthorized Access", {
-                            position: "top-right",
+                            position: "top-center",
                             autoClose: 3000,
                         })
                         // navigate("/login")

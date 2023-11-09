@@ -27,7 +27,7 @@ const Navbar = () => {
         logOut()
             .then(() => {
                 toast("You have logout successfully", {
-                    position: "top-right",
+                    position: "top-center",
                     autoClose: 3000,
                     bg: "dark"
                 })
