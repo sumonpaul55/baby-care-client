@@ -9,7 +9,7 @@ import IndividualService from './IndividualService';
 const AllService = () => {
     const useAxiosSecure = useAxios();
     const [numberOfService, setNumberOfService] = useState(6)
-    // const [filteredcategory, setfilteredcategory] = useState("")
+    const [search, setSearch] = useState("")
     const [filterdData, setfiltedData] = useState([])
     const { data: services, isError, error, isLoading } = useQuery({
         queryKey: ["allServices"],
@@ -25,7 +25,6 @@ const AllService = () => {
         })
     }
     const uniqCate = [... new Set(categories)]
-    // handle filter 
     const handleChange = e => {
         const filteredcategory = (e.target.value)
         if (filteredcategory == "All") {
@@ -33,7 +32,12 @@ const AllService = () => {
         }
         setfiltedData(services.data.filter(items => items.category.toLowerCase() === filteredcategory.toLocaleLowerCase()))
     }
-    // console.log(filterdData)
+    // handle search over here
+    const handleSearch = (e) => {
+        setSearch(e.target.value)
+
+        setfiltedData(services.data.filter(data => data.serviceName.toLowerCase().includes(search.toLowerCase())))
+    }
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -49,12 +53,13 @@ const AllService = () => {
                     <div className="py-10">
                         <div className='md:max-w-[900px] mx-auto'>
                             <div className='flex justify-between items-start sm:flex-row flex-col gap-5 px-4 sm:items-center mb-2'>
-                                <div className='space-y-2'>
-                                    <p className='capitalize font-semibold'>Filter by category</p>
-                                    <p className='text-xs'>You can filter the service form here</p>
+                                <div className='border border-slate-200 p-4 w-full sm:w-auto mr-3 rounded-md hidden sm:block'>
+                                    <p className='capitalize font-semibold text-xs md:text-base'>Search By Service Name</p>
+                                    <input type="text" className='w-full bg-slate-200 rounded-md p-1 px-2 outline-0' onChange={handleSearch} placeholder='' />
                                 </div>
                                 <div className='border border-slate-200 p-4 w-full sm:w-auto mr-3 rounded-md'>
-                                    <select name="filterValue" id="" onChange={handleChange} className='focus:outline-slate-200'>
+                                    <p className='capitalize font-semibold text-xs md:text-base'>Filter By Category</p>
+                                    <select name="filterValue" id="" onChange={handleChange} className='focus:outline-slate-200 w-full'>
                                         <option defaultValue="All">All</option>
                                         {uniqCate.map((items, idx) => <option key={idx} value={items}>{items}</option>)}
                                     </select>

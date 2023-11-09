@@ -7,8 +7,10 @@ import { toast } from 'react-toastify';
 const UpdateMyService = () => {
     const useAxiosSecure = useAxios();
     const service = useLoaderData()[0];
+    // console.log(service)
     const navigate = useNavigate();
     const { _id, serviceArea, serviceImg, serviceName, serviceDescription, price, name, email, about, providerImg, category, location } = service
+
     const handleUpdate = e => {
         e.preventDefault();
         const form = e.target;

@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SimilarSingle = ({ similarData }) => {
+    // const id = useParams().id;
+    // const useAxiosSecur = useAxios()
+    // console.log(id)
+
     // console.log(similarData)
     const { serviceName, serviceImg, price, category, _id } = similarData;
     return (

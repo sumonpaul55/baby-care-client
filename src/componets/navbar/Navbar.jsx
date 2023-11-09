@@ -55,7 +55,7 @@ const Navbar = () => {
                     <div>
                         <ul className={`flex gap-1 duration-300 absolute w-full top-12 z-[9999] flex-col lg:flex-row bg-slate-500 lg:bg-transparent justify-center items-center py-5 lg:py-0 lg:static space-y-5 lg:space-y-0 ${!menuToggle ? "right-[200%]" : "right-0"}`}>
                             <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/">Home</NavLink></li>
-                            <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/all-service">All Service</NavLink></li>
+                            <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base py-2 px-4 rounded-md" to="/all-service">Services</NavLink></li>
                             {!loading && user ?
                                 <>
                                     <li><NavLink className="text-slate-300 lg:text-sm text-base xl:text-base font-semibold py-2 px-4 rounded-md" to="/my-schedule">My Schedule</NavLink></li>
@@ -93,9 +93,9 @@ const Navbar = () => {
                                 </div>
                                 <div onClick={(e) => e.stopPropagation()} className={`p-4 bg-slate-500 absolute top-full border z-[9999] min-w-[250px] duration-200 shadow-2xl shadow-slate-600 rounded-md ${!dashtoggle ? "right-[200%]" : "right-0"}`}>
                                     <ul className='space-y-5'>
-                                        <li className='text-white hover:text-slate-300 duration-200'><Link to="/add-service">Add Service</Link></li>
-                                        <li className='text-white hover:text-slate-300 duration-200'><Link to="/my-service">Manage My Service</Link></li>
-                                        <li className='text-white hover:text-slate-300 duration-200'><Link to="/my-schedule">My Schedules</Link></li>
+                                        <li className='text-white hover:text-slate-300 duration-200' onClick={() => setDashtoggle(false)}><Link to="/add-service">Add Service</Link></li>
+                                        <li className='text-white hover:text-slate-300 duration-200' onClick={() => setDashtoggle(false)}><Link to="/my-service">My Service</Link></li>
+                                        <li className='text-white hover:text-slate-300 duration-200' onClick={() => setDashtoggle(false)}><Link to="/my-schedule">My Schedules</Link></li>
                                     </ul>
                                     <div className="absolute w-10 h-10 bg-slate-500 rotate-45 top-0 -z-10 right-10"></div>
                                 </div>

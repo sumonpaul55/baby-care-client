@@ -53,7 +53,7 @@ const DetailSingle = ({ singleDetailService }) => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        // width: 500,
+        // width: 800,
         bgcolor: '#ccd',
         border: '2px solid #000',
         boxShadow: 24,
@@ -82,7 +82,7 @@ const DetailSingle = ({ singleDetailService }) => {
                             <img src={serviceImg} className='rounded' alt="" />
                             <div className='flex items-center justify-between'>
                                 <h2 className='font-bold text-base md:text-xl lg:text-2xl py-3'>{serviceName}</h2>
-                                <p className='font-bold text-xl'>Price: ${price}</p>
+                                <p className='font-bold text-xl text-primary'>Price: ${price}</p>
                             </div>
                             <address className='text-base md:text-lg font-semibold text-primary'><span className='text-black'>Service Area:</span> {serviceArea}</address>
                             <p className='text-xs my-3 md:text-base'>{serviceDescription}</p>
@@ -171,7 +171,7 @@ const DetailSingle = ({ singleDetailService }) => {
                 <h1 className='font-bold md:text-lg'>Explore Similer Services</h1>
                 {
                     isLoading && <Loading></Loading> ? isError && <p>{error}</p> :
-                        <div className='grid gap-6 grid-cols-4 md:gap-10 mt-10'>
+                        <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-10 mt-10'>
                             {simislarService?.data.map((items, idx) => {
                                 return <SimilarSingle key={idx} similarData={items}></SimilarSingle>
                             })}

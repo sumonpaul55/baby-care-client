@@ -14,6 +14,7 @@ import AddService from '../componets/pages/addService/AddService';
 import ServiceDetails from '../componets/pages/serviceDetail/ServiceDetails';
 import MyService from '../componets/pages/myServices/MyService';
 import UpdateMyService from '../componets/pages/myServices/UpdateMyService';
+// import MoreServiceDetail from '../componets/pages/serviceDetail/MoreServiceDetail';
 const routers = createBrowserRouter([
     {
         path: "/",
@@ -40,6 +41,7 @@ const routers = createBrowserRouter([
             },
             {
                 path: "/service-detail/:id",
+                loader: ({ params }) => fetch(`https://littlestarscare-server.vercel.app/service/${params.id}`),
                 element: <PrivetRoute><ServiceDetails></ServiceDetails></PrivetRoute>
             },
             {
@@ -48,7 +50,7 @@ const routers = createBrowserRouter([
             },
             {
                 path: "/update-service/:id",
-                loader: ({ params }) => fetch(`https://littlestarscare-server.vercel.app/${params.id}`),
+                loader: ({ params }) => fetch(`https://littlestarscare-server.vercel.app/update-service/${params.id}`),
                 element: <UpdateMyService></UpdateMyService>
             }
         ],

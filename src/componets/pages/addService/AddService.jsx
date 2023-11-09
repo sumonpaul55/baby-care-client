@@ -55,7 +55,7 @@ const AddService = () => {
                                 <input type="text" className='w-full p-2 rounded-md focus:outline-primary text-black font-normal border' name='serviceName' placeholder='Service Name' required />
                             </div>
                             <div className='pb-2'>
-                                <label htmlFor="">Service Img url</label><br />
+                                <label htmlFor="">Service Img url(800*550)</label><br />
                                 <input type="text" className='w-full p-2 rounded-md focus:outline-primary text-black font-normal border' name='serviceImg' placeholder='Service Img url' required />
                             </div>
                             <div className='pb-2'>

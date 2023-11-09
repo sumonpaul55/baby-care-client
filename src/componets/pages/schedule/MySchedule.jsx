@@ -44,11 +44,12 @@ const Bookings = () => {
                 <div className='container mx-auto'>
                     <div className='mt-10'>
                         <h1 className='md:text-xl font-bold'>My Bookings</h1>
-                        {
-
+                        {bookedService?.data?.length > 0 ?
                             bookedService?.data?.map((items, idx) => {
                                 return <BookingSingle key={idx} bookedService={items} refetch={refetch}></BookingSingle>
                             })
+                            :
+                            <h2 className='mt-4 text-center'>You Have No bookings</h2>
                         }
                     </div>
                 </div>
