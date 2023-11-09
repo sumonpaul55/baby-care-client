@@ -15,7 +15,7 @@ const Popular = ({ popular }) => {
                     <p className='text-slate-600 line-clamp-4'>{serviceDescription}</p>
                 </div>
                 <div className='mt-3 text-center'>
-                    <Link to={`/update-service/${_id}`}><button className='px-2 md:px-3 py-2 bg-primary w-full mt-4 text-white text-sm'>View Details</button></Link>
+                    <Link to={`/service-detail/${_id}`}><button className='px-2 md:px-3 py-2 bg-primary w-full mt-4 text-white text-sm'>View Details</button></Link>
 
                 </div>
             </div>
