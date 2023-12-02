@@ -6,7 +6,7 @@ const IndividualService = ({ allService }) => {
     const id = allService._id;
     return (
         <>
-            <div className='p-3 md:p-5 shadow-md md:m-5 bg-slate-200 rounded-lg'>
+            <div className='p-3 md:p-5 shadow-md md:m-5 bg-slate-200 rounded-lg' data-aos="fade-up">
                 <div className='flex gap-10 sm:gap-3 flex-col sm:flex-row'>
                     <div className='sm:w-2/3'>
                         <h2 className='md:text-xl font-bold'>{serviceName}</h2>

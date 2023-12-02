@@ -22,7 +22,7 @@ const PendingPerService = ({ pendingServce, prendingRefatch }) => {
             })
     }
     return (
-        <div className='bg-white m-1 p-3 md:p-4 shadow-lg'>
+        <div className='bg-white m-1 p-3 md:p-4 shadow-lg' data-aos="fade-right">
             <div className='flex flex-col sm:flex-row md:flex-col lg:flex-row gap-8 md:gap-5'>
                 <div>
                     <h3 className='my-2 font-bold mt-3 text-pink-600'>{serviceName}</h3>

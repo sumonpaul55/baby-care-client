@@ -4,10 +4,10 @@ import { toast } from 'react-toastify';
 import { AuthContextInfo } from '../authProvider/AuthProvider';
 
 
-//------------------ "https://littlestarscare-server.vercel.app"
-// ----------------------------------------  "https://littlestarscare-server.vercel.app"
+//------------------ "http://localhost:5000"
+// ----------------------------------------  "http://localhost:5000"
 
-const baseURL = "https://littlestarscare-server.vercel.app"
+const baseURL = "http://localhost:5000"
 
 
 const useAxiosSecure = axios.create({
@@ -27,7 +27,7 @@ const useAxios = () => {
                 logOut()
                     .then(() => {
                         toast("You have loggout for You UnAuthorized Access", {
-                            position: "top-center",
+                            position: "bottom-right",
                             autoClose: 3000,
                         })
                         // navigate("/login")

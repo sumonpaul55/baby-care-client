@@ -39,7 +39,7 @@ const MyServiceSingle = ({ MyServiceSingle, refetch }) => {
         });
     }
     return (
-        <div className='p-5 md:p-4 bg-slate-300 m-1 md:m-4 rounded-md shadow-lg'>
+        <div className='p-5 md:p-4 bg-slate-300 m-1 md:m-4 rounded-md shadow-lg' data-aos="fade-up">
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-8 gap-3 items-center'>
                 <div className='lg:space-y-4 md:col-span-2'>
                     <h2 className='md:text-xl font-bold'>{serviceName}</h2>

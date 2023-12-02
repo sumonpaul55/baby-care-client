@@ -33,13 +33,13 @@ const UpdateMyService = () => {
                 if (res.data.modifiedCount) {
                     toast(`${serviceName} updated succesfully`, {
                         autoClose: 2000,
-                        position: "top-center"
+                        position: "bottom-right"
                     })
                     navigate(-1)
                 }
             }).catch(err => {
                 toast(`${err}`, {
-                    position: "top-center",
+                    position: "bottom-right",
                     autoClose: 2000
                 })
             })

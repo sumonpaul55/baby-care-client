@@ -12,7 +12,7 @@ const Contact = () => {
                 <div className='container mx-auto'>
                     <h2 className='text-cennter text-white text-xl md:text-3xl font-bold text-center'>Contact Us</h2>
                     <div className='gap-4 grid grid-cols-1 md:grid-cols-2 items-center'>
-                        <div className='p-4 md:p-10 border border-slate-500'>
+                        <div className='p-4 md:p-10 border border-slate-500' data-aos="fade-right">
                             <form className='space-y-6'>
                                 <div className='flex gap-2 flex-col text-white'>
                                     <label htmlFor="">Name</label>
@@ -29,7 +29,7 @@ const Contact = () => {
                                 <input type="submit" value="Sent" className='w-full text-white bg-primary py-2 rounded-md hover:bg-slate-500 duration-300 cursor-pointer' />
                             </form>
                         </div>
-                        <div>
+                        <div data-aos="fade-left">
                             <Lottie animationData={contactus} loop={true}></Lottie>
                         </div>
                     </div>

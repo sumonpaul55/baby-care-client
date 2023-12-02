@@ -34,7 +34,7 @@ const DetailSingle = ({ singleDetailService }) => {
             .then(res => {
                 if (res.data.insertedId) {
                     toast(`Your Booking Successful`, {
-                        position: "top-center",
+                        position: "bottom-right",
                         autoClose: 2000
                     })
                     navigate(-1)
@@ -43,7 +43,7 @@ const DetailSingle = ({ singleDetailService }) => {
             .catch(err => {
                 toast(err, {
                     autoClose: 200,
-                    position: "top-center"
+                    position: "bottom-right"
                 })
             })
 

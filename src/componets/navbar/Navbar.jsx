@@ -27,7 +27,7 @@ const Navbar = () => {
         logOut()
             .then(() => {
                 toast("You have logout successfully", {
-                    position: "top-center",
+                    position: "bottom-right",
                     autoClose: 3000,
                     bg: "dark"
                 })
@@ -88,20 +88,31 @@ const Navbar = () => {
                         !loading && user ?
                             <div className='flex items-center justify-center gap-3'>
                                 <button className='text-white border p-1 border-slate-600 rounded-md text-sm md:text-base' onClick={handleDashboard}>Dashboard</button>
-                                <div className='lg:hidden'>
-                                    <span className='text-white border-slate-600 block shadow border text-xl p-1 rounded-sm px-2' onClick={handleMenu}><AiOutlineBars /></span>
-                                </div>
-                                <div onClick={(e) => e.stopPropagation()} className={`p-4 bg-slate-500 absolute top-full border z-[9999] min-w-[250px] duration-200 shadow-2xl shadow-slate-600 rounded-md ${!dashtoggle ? "right-[200%]" : "right-0"}`}>
+
+                                <div onClick={(e) => e.stopPropagation()} className={`p-2 bg-slate-500 absolute top-full border z-[9999] min-w-[250px] duration-200 shadow-2xl shadow-slate-600 rounded-md ${!dashtoggle ? "right-[200%]" : "right-5 sm:right-20 lg:right-0"}`}>
                                     <ul className='space-y-5'>
                                         <li className='text-white hover:text-slate-300 duration-200' onClick={() => setDashtoggle(false)}><Link to="/add-service">Add Service</Link></li>
                                         <li className='text-white hover:text-slate-300 duration-200' onClick={() => setDashtoggle(false)}><Link to="/my-service">My Service</Link></li>
                                         <li className='text-white hover:text-slate-300 duration-200' onClick={() => setDashtoggle(false)}><Link to="/my-schedule">My Schedules</Link></li>
                                     </ul>
+                                    <div className='mt-5'>
+                                        <h2 className='text-secondary border-b'>Profile</h2>
+                                        <div className='flex items-center gap-2 justify-between px-1'>
+                                            <div>
+                                                <h2 className='mt-2 text-white text-xs'>{user?.displayName}</h2>
+                                                <h2 className='mt-2 text-white text-xs'>{user?.email}</h2>
+                                            </div>
+                                            <img src={user?.photoURL} className='w-10 h-10 rounded-full' alt="" />
+                                        </div>
+                                    </div>
                                     <div className="absolute w-10 h-10 bg-slate-500 rotate-45 top-0 -z-10 right-10"></div>
                                 </div>
                             </div>
                             : null
                     }
+                    <div className='lg:hidden'>
+                        <span className='text-white border-slate-600 block shadow border text-xl p-1 rounded-sm px-2' onClick={handleMenu}><AiOutlineBars /></span>
+                    </div>
                 </div>
             </div>
         </nav>

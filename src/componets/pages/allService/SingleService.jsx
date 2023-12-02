@@ -7,7 +7,7 @@ const SingleService = ({ service }) => {
     // console.log(_id)
 
     return (
-        <div className='shadow hover:shadow-lg p-3 md:p-5 rounded-md hover:bg-slate-50 duration-200'>
+        <div className='shadow hover:shadow-lg p-3 md:p-5 rounded-md hover:bg-slate-50 duration-200' data-aos="fade-up">
             <div className='flex gap-4 flex-col lg:flex-row'>
                 <div className='lg:w-5/12'>
                     <img src={serviceImg} className='w-full rounded-sm' alt="" />
