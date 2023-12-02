@@ -4,10 +4,8 @@ import { toast } from 'react-toastify';
 import { AuthContextInfo } from '../authProvider/AuthProvider';
 
 
-//------------------ "http://localhost:5000"
-// ----------------------------------------  "http://localhost:5000"
 
-const baseURL = "http://localhost:5000"
+const baseURL = "https://littlestarscare-server.vercel.app"
 
 
 const useAxiosSecure = axios.create({

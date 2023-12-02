@@ -41,7 +41,7 @@ const routers = createBrowserRouter([
             },
             {
                 path: "/service-detail/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`),
+                loader: ({ params }) => fetch(`https://littlestarscare-server.vercel.app/service/${params.id}`),
                 element: <PrivetRoute><ServiceDetails></ServiceDetails></PrivetRoute>
             },
             {
@@ -50,7 +50,7 @@ const routers = createBrowserRouter([
             },
             {
                 path: "/update-service/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/update-service/${params.id}`),
+                loader: ({ params }) => fetch(`https://littlestarscare-server.vercel.app/update-service/${params.id}`),
                 element: <UpdateMyService></UpdateMyService>
             }
         ],
