@@ -4,11 +4,9 @@ Project Features
 
 * User Registration and Authentication: Allow parents and caregivers to create accounts and log in securely. Implement user authentication and authorization to protect sensitive information.
 
-
 * Responsive Design:I am Ensuring this website is responsive and works well on various devices, including smartphones, tablets, and desktops.
 
 * Security and Privacy:  Implement data security with Json web toke jwt, secure authentication, and user data protection to ensure privacy and security.
-
 
 * Ui and Components: Create reusable components for common UI elements to streamline development.
 
