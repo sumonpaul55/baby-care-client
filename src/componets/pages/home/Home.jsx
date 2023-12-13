@@ -16,6 +16,7 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 import faq from "../../../assets/faq.json"
 import { BiDownArrow } from "react-icons/bi"
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
+import AgeCalculator from '../ageCalculator/AgeCalculator';
 const Home = () => {
     const useAxiosSecure = useAxios();
     const { data: services, isError, error, isLoading } = useQuery({
@@ -43,7 +44,6 @@ const Home = () => {
                 pageId="1744153689139754"
                 appId="2139840976393717"
             />
-
 
             <main className='bg-slate-50'>
                 <div className='sm:p-2 md:p-5'><Slider></Slider></div>
@@ -178,6 +178,12 @@ const Home = () => {
                                 </Accordion>
                             </div>
                         </div>
+                    </div>
+                </section>
+                {/* age calculator */}
+                <section className='py-20 px-1 bg-slate-300'>
+                    <div className="container mx-auto">
+                        <AgeCalculator></AgeCalculator>
                     </div>
                 </section>
             </main>
