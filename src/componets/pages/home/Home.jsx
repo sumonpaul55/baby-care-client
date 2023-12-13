@@ -39,10 +39,12 @@ const Home = () => {
                 <title>Littlestarscare || home</title>
             </Helmet>
             {/* live chat */}
-            <MessengerCustomerChat
-                pageId="1744153689139754"
-                appId="2139840976393717"
-            />
+            <div className='fixed abosulute bottom-0 right-1'>
+                <MessengerCustomerChat
+                    pageId="1744153689139754"
+                    appId="2139840976393717"
+                />
+            </div>
 
 
             <main className='bg-slate-50'>
@@ -74,11 +76,11 @@ const Home = () => {
                 <section className='py-32 our-mission'>
                     <div className="container mx-auto px-1">
                         <div className='flex flex-col lg:flex-row gap-5 md:gap-16'>
-                            <div className='lg:w-5/12 clear-left space-y-8' data-aos="fade-right">
+                            <div className='lg:w-5/12 clear-left space-y-8 overflow-hidden' data-aos="fade-right">
                                 <h2 className='text-xl md:text-2xl lg:text-4xl font-semibold'>Our mission</h2>
                                 <p className='text-slate-600 md:text-lg text-justify tracking-tight'>Our mission at Littlestascare is to provide a nurturing haven where every childs potential is celebrated, and their natural curiosity is cultivated. Were committed to creating a safe, loving environment that fosters growth, learning, and positive development in our little stars. With a dedicated team and a passion for education, were here to ignite the spark in each child, guiding them on a path to a bright future filled with endless possibilities.</p>
                             </div>
-                            <div className='lg:w-7/12' data-aos="fade-left">
+                            <div className='lg:w-7/12 overflow-hidden' data-aos="fade-left">
                                 <ReactPlayer url='https://www.youtube.com/watch?v=PEWXRjgLdeM' width="100%" controls light={<img src={img} className='rounded-lg' alt='Thumbnail' />} />
                             </div>
                         </div>
@@ -102,10 +104,10 @@ const Home = () => {
                     <div className='container mx-auto'>
                         <h2 className='text-xl font-bold py-9 md:text-3xl'>Frequently Asked Questions</h2>
                         <div className='gap-5 grid grid-cols-1 md:grid-cols-2 items-center'>
-                            <div className='max-w-[550px]' data-aos="fade-right">
+                            <div className='max-w-[550px] overflow-hidden' data-aos="fade-right">
                                 <Lottie animationData={faq} loop={true} />
                             </div>
-                            <div className='m-2' data-aos="fade-left">
+                            <div className='m-2 overflow-hidden' data-aos="fade-left">
                                 <Accordion>
                                     <AccordionSummary
                                         expandIcon={<BiDownArrow />}
