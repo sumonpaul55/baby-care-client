@@ -12,6 +12,7 @@ import Loading from '../../../shared/Loading';
 import SingleService from '../allService/SingleService';
 import Popular from './Popular';
 import Lottie from 'lottie-react';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 import faq from "../../../assets/faq.json"
 import { BiDownArrow } from "react-icons/bi"
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
@@ -37,6 +38,13 @@ const Home = () => {
             <Helmet>
                 <title>Littlestarscare || home</title>
             </Helmet>
+            {/* live chat */}
+            <MessengerCustomerChat
+                pageId="1744153689139754"
+                appId="2139840976393717"
+            />
+
+
             <main className='bg-slate-50'>
                 <div className='sm:p-2 md:p-5'><Slider></Slider></div>
                 <section className="py-20 bg-white">
