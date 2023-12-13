@@ -39,12 +39,10 @@ const Home = () => {
                 <title>Littlestarscare || home</title>
             </Helmet>
             {/* live chat */}
-            <div className='fixed abosulute bottom-0 right-1'>
-                <MessengerCustomerChat
-                    pageId="1744153689139754"
-                    appId="2139840976393717"
-                />
-            </div>
+            <MessengerCustomerChat
+                pageId="1744153689139754"
+                appId="2139840976393717"
+            />
 
 
             <main className='bg-slate-50'>
