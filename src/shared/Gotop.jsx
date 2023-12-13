@@ -11,7 +11,7 @@ const Gotop = () => {
         })
     }, [])
     if (scroll > 500) {
-        return <button className='fixed bg-sky-600 p-3 z-[9999] text-white rounded-full text-2xl bottom-10 right-24' onClick={handlegotp}><AiOutlineArrowUp className='animate-bounce -translate-y-2' /></button>
+        return <button className='fixed bg-sky-600 p-3 z-[9999] text-white rounded-full text-2xl bottom-5 right-28' onClick={handlegotp}><AiOutlineArrowUp className='animate-bounce -translate-y-2' /></button>
     }
 };
 export default Gotop;
