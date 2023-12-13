@@ -1,21 +1,37 @@
-<!-- My assignment 11 -->
-live link: https://littlestars-care.web.app
+Project Features
 
-client side repo link: https://github.com/Porgramming-Hero-web-course/b8a11-client-side-sumonpaul55
-
-server side repo link: https://github.com/Porgramming-Hero-web-course/b8a11-server-side-sumonpaul55
-
-
-5 Features of My projects
+* A lot of features available in this project including as follows
 
 * User Registration and Authentication: Allow parents and caregivers to create accounts and log in securely. Implement user authentication and authorization to protect sensitive information.
 
-
-* Responsive Design: Ensure your website is responsive and works well on various devices, including smartphones, tablets, and desktops.
+* Responsive Design:I am Ensuring this website is responsive and works well on various devices, including smartphones, tablets, and desktops.
 
 * Security and Privacy:  Implement data security with Json web toke jwt, secure authentication, and user data protection to ensure privacy and security.
-
 
 * Ui and Components: Create reusable components for common UI elements to streamline development.
 
 * many usefull and attracktive packages: I have used here some beautiful react packages for attracktive this application
+
+* two types of people can register overhere service provider and service buyer.
+
+* service Provider will be able to add their relevent service and buyer can purch those service wich is uploaded by service provider
+
+* If anyone's service booked by customer then it will show in my services page and it will show pendding status. then provider can change the status after verifing
+
+* Service Detail page including service Provider information and a book now button. If you click the book now button it booked for you
+
+
+* Service Page:  all available service will show in the service page
+
+* filter and serce option: You can filter the Service by their category. And You will be able to search by service name as well.
+
+
+* ‍Service detail page: In the Service detail page you will be show the service related information and more relevent services
+
+* All Service will show in the my service page which service is added by service provider or you.
+
+Uniq Features
+
+* Live Chat: I have implement in this project a messange live chat using so that people can message instantly the babycare authority and can be get help from them.
+
+* Age calculator: I have create a Age calculator in the bottom of home under the FAQ section which will help you to find out the any body's age.
